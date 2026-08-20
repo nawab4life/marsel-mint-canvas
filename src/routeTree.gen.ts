@@ -10,33 +10,188 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
+import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as SitemapXmlRouteImport } from './routes/sitemap.xml'
+import { Route as SolutionsAvRouteImport } from './routes/solutions.av'
+import { Route as SolutionsIdRouteImport } from './routes/solutions.id'
+import { Route as SolutionsItRouteImport } from './routes/solutions.it'
+import { Route as SolutionsSecurityRouteImport } from './routes/solutions.security'
+import { Route as SolutionsUccRouteImport } from './routes/solutions.ucc'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowWeWorkRoute = HowWeWorkRouteImport.update({
+  id: '/how-we-work',
+  path: '/how-we-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesRoute = IndustriesRouteImport.update({
+  id: '/industries',
+  path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapXmlRoute = SitemapXmlRouteImport.update({
+  id: '/sitemap/xml',
+  path: '/sitemap/xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsAvRoute = SolutionsAvRouteImport.update({
+  id: '/av',
+  path: '/av',
+  getParentRoute: () => SolutionsRoute,
+} as any)
+const SolutionsIdRoute = SolutionsIdRouteImport.update({
+  id: '/id',
+  path: '/id',
+  getParentRoute: () => SolutionsRoute,
+} as any)
+const SolutionsItRoute = SolutionsItRouteImport.update({
+  id: '/it',
+  path: '/it',
+  getParentRoute: () => SolutionsRoute,
+} as any)
+const SolutionsSecurityRoute = SolutionsSecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => SolutionsRoute,
+} as any)
+const SolutionsUccRoute = SolutionsUccRouteImport.update({
+  id: '/ucc',
+  path: '/ucc',
+  getParentRoute: () => SolutionsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/how-we-work': typeof HowWeWorkRoute
+  '/industries': typeof IndustriesRoute
+  '/partners': typeof PartnersRoute
+  '/solutions': typeof SolutionsRouteWithChildren
+  '/sitemap/xml': typeof SitemapXmlRoute
+  '/solutions/av': typeof SolutionsAvRoute
+  '/solutions/id': typeof SolutionsIdRoute
+  '/solutions/it': typeof SolutionsItRoute
+  '/solutions/security': typeof SolutionsSecurityRoute
+  '/solutions/ucc': typeof SolutionsUccRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/how-we-work': typeof HowWeWorkRoute
+  '/industries': typeof IndustriesRoute
+  '/partners': typeof PartnersRoute
+  '/solutions': typeof SolutionsRouteWithChildren
+  '/sitemap/xml': typeof SitemapXmlRoute
+  '/solutions/av': typeof SolutionsAvRoute
+  '/solutions/id': typeof SolutionsIdRoute
+  '/solutions/it': typeof SolutionsItRoute
+  '/solutions/security': typeof SolutionsSecurityRoute
+  '/solutions/ucc': typeof SolutionsUccRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/how-we-work': typeof HowWeWorkRoute
+  '/industries': typeof IndustriesRoute
+  '/partners': typeof PartnersRoute
+  '/solutions': typeof SolutionsRouteWithChildren
+  '/sitemap/xml': typeof SitemapXmlRoute
+  '/solutions/av': typeof SolutionsAvRoute
+  '/solutions/id': typeof SolutionsIdRoute
+  '/solutions/it': typeof SolutionsItRoute
+  '/solutions/security': typeof SolutionsSecurityRoute
+  '/solutions/ucc': typeof SolutionsUccRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/how-we-work'
+    | '/industries'
+    | '/partners'
+    | '/solutions'
+    | '/sitemap/xml'
+    | '/solutions/av'
+    | '/solutions/id'
+    | '/solutions/it'
+    | '/solutions/security'
+    | '/solutions/ucc'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/how-we-work'
+    | '/industries'
+    | '/partners'
+    | '/solutions'
+    | '/sitemap/xml'
+    | '/solutions/av'
+    | '/solutions/id'
+    | '/solutions/it'
+    | '/solutions/security'
+    | '/solutions/ucc'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/how-we-work'
+    | '/industries'
+    | '/partners'
+    | '/solutions'
+    | '/sitemap/xml'
+    | '/solutions/av'
+    | '/solutions/id'
+    | '/solutions/it'
+    | '/solutions/security'
+    | '/solutions/ucc'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  HowWeWorkRoute: typeof HowWeWorkRoute
+  IndustriesRoute: typeof IndustriesRoute
+  PartnersRoute: typeof PartnersRoute
+  SolutionsRoute: typeof SolutionsRouteWithChildren
+  SitemapXmlRoute: typeof SitemapXmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +203,122 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-we-work': {
+      id: '/how-we-work'
+      path: '/how-we-work'
+      fullPath: '/how-we-work'
+      preLoaderRoute: typeof HowWeWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries': {
+      id: '/industries'
+      path: '/industries'
+      fullPath: '/industries'
+      preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap/xml': {
+      id: '/sitemap/xml'
+      path: '/sitemap/xml'
+      fullPath: '/sitemap/xml'
+      preLoaderRoute: typeof SitemapXmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/av': {
+      id: '/solutions/av'
+      path: '/av'
+      fullPath: '/solutions/av'
+      preLoaderRoute: typeof SolutionsAvRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/id': {
+      id: '/solutions/id'
+      path: '/id'
+      fullPath: '/solutions/id'
+      preLoaderRoute: typeof SolutionsIdRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/it': {
+      id: '/solutions/it'
+      path: '/it'
+      fullPath: '/solutions/it'
+      preLoaderRoute: typeof SolutionsItRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/security': {
+      id: '/solutions/security'
+      path: '/security'
+      fullPath: '/solutions/security'
+      preLoaderRoute: typeof SolutionsSecurityRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/ucc': {
+      id: '/solutions/ucc'
+      path: '/ucc'
+      fullPath: '/solutions/ucc'
+      preLoaderRoute: typeof SolutionsUccRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
   }
 }
 
+interface SolutionsRouteChildren {
+  SolutionsAvRoute: typeof SolutionsAvRoute
+  SolutionsIdRoute: typeof SolutionsIdRoute
+  SolutionsItRoute: typeof SolutionsItRoute
+  SolutionsSecurityRoute: typeof SolutionsSecurityRoute
+  SolutionsUccRoute: typeof SolutionsUccRoute
+}
+
+const SolutionsRouteChildren: SolutionsRouteChildren = {
+  SolutionsAvRoute: SolutionsAvRoute,
+  SolutionsIdRoute: SolutionsIdRoute,
+  SolutionsItRoute: SolutionsItRoute,
+  SolutionsSecurityRoute: SolutionsSecurityRoute,
+  SolutionsUccRoute: SolutionsUccRoute,
+}
+
+const SolutionsRouteWithChildren = SolutionsRoute._addFileChildren(
+  SolutionsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  HowWeWorkRoute: HowWeWorkRoute,
+  IndustriesRoute: IndustriesRoute,
+  PartnersRoute: PartnersRoute,
+  SolutionsRoute: SolutionsRouteWithChildren,
+  SitemapXmlRoute: SitemapXmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
