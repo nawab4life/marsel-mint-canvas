@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Building2, GraduationCap } from "lucide-react";
+import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
 
 export const Route = createFileRoute("/solutions/id")({
   head: () => ({
@@ -14,11 +16,45 @@ export const Route = createFileRoute("/solutions/id")({
   component: IDPage,
 });
 
+const subServices = [
+  { title: "Access Control Systems", description: "Door controllers, readers and credentials that manage entry by person, time and zone.", brands: "HID" },
+  { title: "Time & Attendance Systems", description: "Clock-in/clock-out solutions integrated with payroll and HR systems.", brands: "HID" },
+  { title: "Visitor Management Systems", description: "Pre-registration, badge printing and host notifications for visitor entry.", brands: "Multiple" },
+  { title: "Biometric Identification", description: "Fingerprint, face and palm recognition for high-assurance identity verification.", brands: "HID" },
+  { title: "Card Issuance & Printing", description: "On-site badge printing and credential personalization.", brands: "HID" },
+];
+
+const partners = [
+  { name: "HID", description: "Access control and identity solutions." },
+];
+
+const industries = ["Corporate", "Education", "Healthcare", "Retail"];
+
+const projects = [
+  {
+    title: "School Access & Attendance",
+    sector: "Education",
+    scope: "Deployed HID access control and time-attendance across a Dubai school campus.",
+    icon: GraduationCap,
+  },
+  {
+    title: "Office Access Control",
+    sector: "Corporate",
+    scope: "Installed card and biometric readers for a multi-tenant Dubai office.",
+    icon: Building2,
+  },
+];
+
 function IDPage() {
   return (
-    <div className="py-20 text-center">
-      <h1 className="text-4xl font-bold">ID Solutions</h1>
-      <p className="mt-4 text-muted-foreground">Content coming soon.</p>
-    </div>
+    <SolutionPageTemplate
+      title="ID Solutions"
+      tagline="Identity and access, managed properly"
+      overview="Identity solutions control who goes where, when and for how long. We design access control, time-attendance and visitor management systems that fit your policies without creating friction for staff and guests."
+      subServices={subServices}
+      partners={partners}
+      industries={industries}
+      projects={projects}
+    />
   );
 }

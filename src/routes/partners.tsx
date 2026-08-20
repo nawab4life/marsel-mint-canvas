@@ -1,4 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/SectionHeading";
+import { PartnerLogo } from "@/components/PartnerLogo";
 
 export const Route = createFileRoute("/partners")({
   head: () => ({
@@ -14,11 +18,61 @@ export const Route = createFileRoute("/partners")({
   component: PartnersPage,
 });
 
+const partners = [
+  { name: "Cisco", description: "Unified communications, collaboration and network infrastructure. We deploy Cisco Webex, VoIP and switching for offices and hospitality clients." },
+  { name: "HID", description: "Access control and identity solutions. We use HID readers, controllers and credentials for secure entry and workforce management." },
+  { name: "Axis", description: "IP video surveillance and network cameras. Axis is our go-to for reliable, high-quality CCTV deployments." },
+  { name: "Aiphone", description: "Intercom and video door entry systems. Aiphone gives us clean audio/video entry solutions for offices and residential buildings." },
+  { name: "CP Plus", description: "CCTV and surveillance product range. CP Plus provides cost-effective camera and recorder options for budget-sensitive projects." },
+  { name: "IRIZ", description: "Specialized security and communication products. IRIZ extends our options for tailored project requirements." },
+];
+
 function PartnersPage() {
   return (
-    <div className="py-20 text-center">
-      <h1 className="text-4xl font-bold">Partners</h1>
-      <p className="mt-4 text-muted-foreground">Content coming soon.</p>
-    </div>
+    <>
+      <section className="bg-muted/30 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              Partners
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+              We partner with and are trained on industry-leading platforms so we can deliver the right solution for your needs — not just the one we sell.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Technology Partners"
+            title="Brands we design, deploy and support"
+          />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {partners.map((partner) => (
+              <PartnerLogo key={partner.name} {...partner} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-muted/30 py-16 lg:py-24">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Interested in becoming a partner?
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            We are always open to relationships with distributors and manufacturers whose products solve real problems for our clients.
+          </p>
+          <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
+            <Link to="/contact">
+              Get in Touch
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+    </>
   );
 }

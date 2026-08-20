@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Building2, ShoppingBag } from "lucide-react";
+import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
 
 export const Route = createFileRoute("/solutions/security")({
   head: () => ({
@@ -14,11 +16,50 @@ export const Route = createFileRoute("/solutions/security")({
   component: SecurityPage,
 });
 
+const subServices = [
+  { title: "CCTV & Video Surveillance", description: "IP cameras, NVRs and video analytics configured for coverage, retention and remote access.", brands: "Axis, CP Plus" },
+  { title: "Access Control", description: "Card, biometric and mobile credential systems to control who enters your premises.", brands: "HID" },
+  { title: "Intrusion Detection & Alarms", description: "Perimeter and interior alarm systems with monitoring integration.", brands: "Honeywell" },
+  { title: "Intercom & Video Door Entry", description: "Audio and video intercom systems for entry points and reception areas.", brands: "Aiphone" },
+  { title: "Integrated Command & Control", description: "Unified security dashboards for larger sites that need centralized monitoring.", brands: "Multiple" },
+  { title: "Remote Monitoring & Maintenance", description: "Off-site health checks and troubleshooting to keep systems online.", brands: "Multiple" },
+];
+
+const partners = [
+  { name: "Axis", description: "IP video surveillance and network cameras." },
+  { name: "CP Plus", description: "CCTV and surveillance product range." },
+  { name: "HID", description: "Access control and identity solutions." },
+  { name: "Aiphone", description: "Intercom and video door entry systems." },
+  { name: "Honeywell", description: "Intrusion detection and alarm systems." },
+];
+
+const industries = ["Corporate", "Retail", "Hospitality", "Education", "Healthcare"];
+
+const projects = [
+  {
+    title: "Retail Surveillance Refresh",
+    sector: "Retail",
+    scope: "Replaced analogue CCTV with IP cameras and remote viewing for a UAE retail chain.",
+    icon: ShoppingBag,
+  },
+  {
+    title: "Office Perimeter Security",
+    sector: "Corporate",
+    scope: "Installed intrusion detection, access control and CCTV for a Dubai office building.",
+    icon: Building2,
+  },
+];
+
 function SecurityPage() {
   return (
-    <div className="py-20 text-center">
-      <h1 className="text-4xl font-bold">Security Solutions</h1>
-      <p className="mt-4 text-muted-foreground">Content coming soon.</p>
-    </div>
+    <SolutionPageTemplate
+      title="Security Solutions"
+      tagline="Visible protection, reliable coverage"
+      overview="We design security systems that match real site risks — from single retail stores to multi-zone corporate buildings. Our focus is on clear coverage, genuine warranties and systems you can actually operate."
+      subServices={subServices}
+      partners={partners}
+      industries={industries}
+      projects={projects}
+    />
   );
 }
