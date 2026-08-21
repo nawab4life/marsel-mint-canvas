@@ -37,6 +37,7 @@ export function SolutionCard({ to, title, description, icon: Icon, image }: Solu
         Explore {title.split(" ")[0]}
         <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </div>
+      </div>
     </Link>
   );
 }
