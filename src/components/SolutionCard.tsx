@@ -6,14 +6,28 @@ interface SolutionCardProps {
   title: string;
   description: string;
   icon: LucideIcon;
+  image?: string;
 }
 
-export function SolutionCard({ to, title, description, icon: Icon }: SolutionCardProps) {
+export function SolutionCard({ to, title, description, icon: Icon, image }: SolutionCardProps) {
   return (
     <Link
       to={to}
-      className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
     >
+      {image && (
+        <div className="relative h-44 w-full overflow-hidden bg-foreground">
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            width={1920}
+            height={1088}
+            className="h-full w-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      )}
+      <div className="flex flex-1 flex-col p-6">
       <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
         <Icon className="h-6 w-6" />
       </div>
