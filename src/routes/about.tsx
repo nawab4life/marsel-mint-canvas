@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PageHero } from "@/components/PageHero";
 import heroAbout from "@/assets/hero-about.jpg";
+import heroTeam from "@/assets/hero-process.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -97,6 +98,7 @@ function AboutPage() {
               <p className="mt-4 text-sm text-muted-foreground">
                 A professional headshot and full bio will be added here once provided.
               </p>
+              </div>
             </div>
           </div>
         </div>
