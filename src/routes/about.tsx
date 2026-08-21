@@ -77,7 +77,16 @@ function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl bg-muted/50 p-8 lg:p-12">
+            <div className="overflow-hidden rounded-2xl bg-muted/50">
+              <img
+                src={heroTeam}
+                alt="MarselTech engineer working on-site with technical drawings"
+                loading="lazy"
+                width={1920}
+                height={1088}
+                className="h-56 w-full object-cover"
+              />
+              <div className="p-8 lg:p-12">
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground text-2xl font-bold">
                 MT
               </div>
