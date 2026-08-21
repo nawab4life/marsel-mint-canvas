@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProjectCard } from "@/components/ProjectCard";
 import { PartnerLogo } from "@/components/PartnerLogo";
+import { PageHero } from "@/components/PageHero";
 
 interface SubService {
   title: string;
@@ -22,6 +23,8 @@ interface SolutionPageTemplateProps {
   title: string;
   tagline: string;
   overview: string;
+  image: string;
+  imageAlt: string;
   subServices: SubService[];
   partners: { name: string; description: string }[];
   industries: string[];
@@ -32,6 +35,8 @@ export function SolutionPageTemplate({
   title,
   tagline,
   overview,
+  image,
+  imageAlt,
   subServices,
   partners,
   industries,
@@ -40,26 +45,25 @@ export function SolutionPageTemplate({
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-muted/30 py-20 lg:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              {title}
-            </h1>
-            <p className="mt-4 text-xl text-primary font-medium">{tagline}</p>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{overview}</p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link to="/contact">Get a Quote</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-foreground/20 hover:bg-accent">
-                <Link to="/solutions">All Solutions</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={image}
+        alt={imageAlt}
+        eager
+        title={title}
+        description={
+          <>
+            <span className="block text-xl font-medium text-primary">{tagline}</span>
+            <span className="mt-4 block">{overview}</span>
+          </>
+        }
+      >
+        <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Link to="/contact">Get a Quote</Link>
+        </Button>
+        <Button asChild size="lg" variant="outline" className="border-background/30 bg-transparent text-background hover:bg-background hover:text-foreground">
+          <Link to="/solutions">All Solutions</Link>
+        </Button>
+      </PageHero>
 
       {/* Sub-services */}
       <section className="py-20 lg:py-28">

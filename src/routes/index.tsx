@@ -22,6 +22,13 @@ import { SolutionCard } from "@/components/SolutionCard";
 import { ProcessStep } from "@/components/ProcessStep";
 import { ProjectCard } from "@/components/ProjectCard";
 import { PartnerLogo } from "@/components/PartnerLogo";
+import { PageHero } from "@/components/PageHero";
+import heroHome from "@/assets/hero-home.jpg";
+import imgUcc from "@/assets/hero-ucc.jpg";
+import imgSecurity from "@/assets/hero-security.jpg";
+import imgId from "@/assets/hero-id.jpg";
+import imgIt from "@/assets/hero-it.jpg";
+import imgAv from "@/assets/hero-av.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,30 +47,35 @@ export const Route = createFileRoute("/")({
 const solutions = [
   {
     to: "/solutions/ucc",
+    image: imgUcc,
     title: "UCC Solutions",
     description: "Video conferencing, VoIP & collaboration systems for modern offices.",
     icon: Video,
   },
   {
     to: "/solutions/security",
+    image: imgSecurity,
     title: "Security Solutions",
     description: "CCTV, surveillance & intrusion systems built on Axis, CP Plus & Honeywell.",
     icon: Shield,
   },
   {
     to: "/solutions/id",
+    image: imgId,
     title: "ID Solutions",
     description: "Access control, biometric & time-attendance systems powered by HID.",
     icon: Fingerprint,
   },
   {
     to: "/solutions/it",
+    image: imgIt,
     title: "IT Solutions",
     description: "Network infrastructure, servers & managed IT support.",
     icon: Server,
   },
   {
     to: "/solutions/av",
+    image: imgAv,
     title: "AV Solutions",
     description: "Meeting rooms, digital signage & audio systems for corporate & hospitality.",
     icon: Monitor,
@@ -134,28 +146,26 @@ function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-background">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Unified Communications, Security, IT & AV Solutions —{" "}
-              <span className="text-primary">Engineered for Dubai's Businesses</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              End-to-end technology integration across UCC, Security, ID, IT and AV — from consultation to after-sales support.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link to="/contact">Get a Quote</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-foreground/20 hover:bg-accent">
-                <Link to="/solutions">Explore Solutions</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className="pointer-events-none absolute right-0 top-0 -z-10 h-full w-1/2 bg-gradient-to-l from-primary/5 to-transparent" />
-      </section>
+      <PageHero
+        image={heroHome}
+        alt="MarselTech engineers installing network and rack infrastructure in a Dubai commercial building"
+        eager
+        size="large"
+        title={
+          <>
+            Unified Communications, Security, IT & AV Solutions —{" "}
+            <span className="text-primary">Engineered for Dubai's Businesses</span>
+          </>
+        }
+        description="End-to-end technology integration across UCC, Security, ID, IT and AV — from consultation to after-sales support."
+      >
+        <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Link to="/contact">Get a Quote</Link>
+        </Button>
+        <Button asChild size="lg" variant="outline" className="border-background/30 bg-transparent text-background hover:bg-background hover:text-foreground">
+          <Link to="/solutions">Explore Solutions</Link>
+        </Button>
+      </PageHero>
 
       {/* Trust Bar */}
       <section className="border-y border-border bg-muted/30">

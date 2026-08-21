@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, GraduationCap } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
+import heroImage from "@/assets/hero-id.jpg";
 
 export const Route = createFileRoute("/solutions/id")({
   head: () => ({
@@ -51,6 +52,8 @@ function IDPage() {
       title="ID Solutions"
       tagline="Identity and access, managed properly"
       overview="Identity solutions control who goes where, when and for how long. We design access control, time-attendance and visitor management systems that fit your policies without creating friction for staff and guests."
+      image={heroImage}
+      imageAlt="ID card printer producing employee access badges"
       subServices={subServices}
       partners={partners}
       industries={industries}

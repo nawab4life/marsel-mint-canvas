@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Shield, Users, Wrench, MapPin, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import heroAbout from "@/assets/hero-about.jpg";
+import heroTeam from "@/assets/hero-process.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -47,18 +50,13 @@ function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              About MarselTech
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              MarselTech has spent the past two years delivering Unified Communications, Security, ID, IT and AV solutions to businesses across Dubai — handling every stage from consultation to after-sales support.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={heroAbout}
+        alt="Dubai skyline at dusk"
+        eager
+        title="About MarselTech"
+        description="MarselTech has spent the past two years delivering Unified Communications, Security, ID, IT and AV solutions to businesses across Dubai — handling every stage from consultation to after-sales support."
+      />
 
       {/* Who We Are */}
       <section className="py-20 lg:py-28">
@@ -80,7 +78,16 @@ function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl bg-muted/50 p-8 lg:p-12">
+            <div className="overflow-hidden rounded-2xl bg-muted/50">
+              <img
+                src={heroTeam}
+                alt="MarselTech engineer working on-site with technical drawings"
+                loading="lazy"
+                width={1920}
+                height={1088}
+                className="h-56 w-full object-cover"
+              />
+              <div className="p-8 lg:p-12">
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground text-2xl font-bold">
                 MT
               </div>
@@ -91,6 +98,7 @@ function AboutPage() {
               <p className="mt-4 text-sm text-muted-foreground">
                 A professional headshot and full bio will be added here once provided.
               </p>
+              </div>
             </div>
           </div>
         </div>

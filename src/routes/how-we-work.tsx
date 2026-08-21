@@ -3,6 +3,8 @@ import { Phone, PenTool, Package, Wrench, Headphones, ArrowRight } from "lucide-
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProcessStep } from "@/components/ProcessStep";
+import { PageHero } from "@/components/PageHero";
+import heroProcess from "@/assets/hero-process.jpg";
 
 export const Route = createFileRoute("/how-we-work")({
   head: () => ({
@@ -29,18 +31,13 @@ const processSteps = [
 function HowWeWorkPage() {
   return (
     <>
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              How We Work
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Every project follows the same structured process, from first consultation to long-term support. This discipline is what makes a small operation deliver like a mature systems integrator.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={heroProcess}
+        alt="Engineer reviewing site drawings during project planning"
+        eager
+        title="How We Work"
+        description="Every project follows the same structured process, from first consultation to long-term support. This discipline is what makes a small operation deliver like a mature systems integrator."
+      />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

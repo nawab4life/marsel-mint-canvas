@@ -2,6 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Video, Shield, Fingerprint, Server, Monitor, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import heroSolutions from "@/assets/hero-solutions.jpg";
+import imgUcc from "@/assets/hero-ucc.jpg";
+import imgSecurity from "@/assets/hero-security.jpg";
+import imgId from "@/assets/hero-id.jpg";
+import imgIt from "@/assets/hero-it.jpg";
+import imgAv from "@/assets/hero-av.jpg";
 import { SolutionCard } from "@/components/SolutionCard";
 
 export const Route = createFileRoute("/solutions")({
@@ -21,30 +28,35 @@ export const Route = createFileRoute("/solutions")({
 const solutions = [
   {
     to: "/solutions/ucc",
+    image: imgUcc,
     title: "UCC Solutions",
     description: "Video conferencing, VoIP & collaboration systems for modern offices. We design around how your teams actually meet and communicate.",
     icon: Video,
   },
   {
     to: "/solutions/security",
+    image: imgSecurity,
     title: "Security Solutions",
     description: "CCTV, surveillance & intrusion systems built on Axis, CP Plus & Honeywell. Coverage designed for your site layout and risk profile.",
     icon: Shield,
   },
   {
     to: "/solutions/id",
+    image: imgId,
     title: "ID Solutions",
     description: "Access control, biometric & time-attendance systems powered by HID. Identity management that fits your workforce and policies.",
     icon: Fingerprint,
   },
   {
     to: "/solutions/it",
+    image: imgIt,
     title: "IT Solutions",
     description: "Network infrastructure, servers & managed IT support. Reliable foundations for the applications your business depends on.",
     icon: Server,
   },
   {
     to: "/solutions/av",
+    image: imgAv,
     title: "AV Solutions",
     description: "Meeting rooms, digital signage & audio systems for corporate and hospitality spaces. Clear sound and image where it matters.",
     icon: Monitor,
@@ -54,18 +66,13 @@ const solutions = [
 function SolutionsPage() {
   return (
     <>
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Solutions
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              At MarselTech, a solution is a complete system — not just a box. Every project is evaluated against reliability, scalability, security and budget-fit before we recommend a product mix.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={heroSolutions}
+        alt="Network switch, IP camera, access reader, IP phone and fiber cabling"
+        eager
+        title="Solutions"
+        description="At MarselTech, a solution is a complete system — not just a box. Every project is evaluated against reliability, scalability, security and budget-fit before we recommend a product mix."
+      />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

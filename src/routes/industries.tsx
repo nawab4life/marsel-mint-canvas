@@ -3,6 +3,8 @@ import { Building2, ShoppingBag, Hotel, GraduationCap, Stethoscope, ArrowRight }
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { IndustryCard } from "@/components/IndustryCard";
+import { PageHero } from "@/components/PageHero";
+import heroIndustries from "@/assets/hero-industries.jpg";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -54,18 +56,13 @@ const industries = [
 function IndustriesPage() {
   return (
     <>
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Industries We Serve
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              We tailor our solutions to the operational realities of each sector — from office meeting rooms to hotel guest experiences.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={heroIndustries}
+        alt="Hospital, hotel and campus interiors served by MarselTech"
+        eager
+        title="Industries We Serve"
+        description="We tailor our solutions to the operational realities of each sector — from office meeting rooms to hotel guest experiences."
+      />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
