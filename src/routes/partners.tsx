@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PartnerLogo } from "@/components/PartnerLogo";
+import { PageHero } from "@/components/PageHero";
+import heroPartners from "@/assets/hero-partners.jpg";
 
 export const Route = createFileRoute("/partners")({
   head: () => ({
@@ -30,18 +32,13 @@ const partners = [
 function PartnersPage() {
   return (
     <>
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Partners
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              We partner with and are trained on industry-leading platforms so we can deliver the right solution for your needs — not just the one we sell.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={heroPartners}
+        alt="Business partnership handshake in a technology office"
+        eager
+        title="Partners"
+        description="We partner with and are trained on industry-leading platforms so we can deliver the right solution for your needs — not just the one we sell."
+      />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

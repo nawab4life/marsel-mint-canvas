@@ -54,18 +54,13 @@ const solutions = [
 function SolutionsPage() {
   return (
     <>
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Solutions
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              At MarselTech, a solution is a complete system — not just a box. Every project is evaluated against reliability, scalability, security and budget-fit before we recommend a product mix.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={heroSolutions}
+        alt="Network switch, IP camera, access reader, IP phone and fiber cabling"
+        eager
+        title="Solutions"
+        description="At MarselTech, a solution is a complete system — not just a box. Every project is evaluated against reliability, scalability, security and budget-fit before we recommend a product mix."
+      />
 
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
