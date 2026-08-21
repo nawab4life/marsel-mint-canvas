@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Hotel } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
+import heroImage from "@/assets/hero-it.jpg";
 
 export const Route = createFileRoute("/solutions/it")({
   head: () => ({
@@ -53,6 +54,8 @@ function ITPage() {
       title="IT Solutions"
       tagline="Reliable infrastructure for daily operations"
       overview="Your IT infrastructure is the platform everything else runs on. We build networks, servers and support processes that keep business applications available and secure."
+      image={heroImage}
+      imageAlt="Data center aisle with network switches and structured cabling"
       subServices={subServices}
       partners={partners}
       industries={industries}

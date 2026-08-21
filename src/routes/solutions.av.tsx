@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Hotel } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
+import heroImage from "@/assets/hero-av.jpg";
 
 export const Route = createFileRoute("/solutions/av")({
   head: () => ({
@@ -53,6 +54,8 @@ function AVPage() {
       title="AV Solutions"
       tagline="Clear sound and image where it matters"
       overview="Audio-visual systems shape how spaces feel and how meetings run. We design meeting room AV, digital signage and sound systems for corporate, hospitality and retail environments in Dubai."
+      image={heroImage}
+      imageAlt="Large LED video wall and professional audio system in an auditorium"
       subServices={subServices}
       partners={partners}
       industries={industries}

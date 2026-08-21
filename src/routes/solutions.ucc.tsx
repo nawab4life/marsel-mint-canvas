@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Hotel } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
+import heroImage from "@/assets/hero-ucc.jpg";
 
 export const Route = createFileRoute("/solutions/ucc")({
   head: () => ({
@@ -51,6 +52,8 @@ function UCCPage() {
       title="UCC Solutions"
       tagline="Reliable collaboration for modern workplaces"
       overview="Unified Communications and Collaboration (UCC) brings together voice, video, messaging and meeting-room technology into one coherent experience. We design, install and support these systems for offices and commercial spaces across Dubai."
+      image={heroImage}
+      imageAlt="Corporate meeting room with video conferencing and unified communications equipment"
       subServices={subServices}
       partners={partners}
       industries={industries}

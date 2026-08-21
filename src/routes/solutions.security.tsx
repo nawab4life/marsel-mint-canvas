@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, ShoppingBag } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
+import heroImage from "@/assets/hero-security.jpg";
 
 export const Route = createFileRoute("/solutions/security")({
   head: () => ({
@@ -56,6 +57,8 @@ function SecurityPage() {
       title="Security Solutions"
       tagline="Visible protection, reliable coverage"
       overview="We design security systems that match real site risks — from single retail stores to multi-zone corporate buildings. Our focus is on clear coverage, genuine warranties and systems you can actually operate."
+      image={heroImage}
+      imageAlt="Security control room with CCTV video wall"
       subServices={subServices}
       partners={partners}
       industries={industries}
