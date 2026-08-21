@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Shield, Users, Wrench, MapPin, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import heroAbout from "@/assets/hero-about.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -47,18 +49,13 @@ function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              About MarselTech
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              MarselTech has spent the past two years delivering Unified Communications, Security, ID, IT and AV solutions to businesses across Dubai — handling every stage from consultation to after-sales support.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={heroAbout}
+        alt="Dubai skyline at dusk"
+        eager
+        title="About MarselTech"
+        description="MarselTech has spent the past two years delivering Unified Communications, Security, ID, IT and AV solutions to businesses across Dubai — handling every stage from consultation to after-sales support."
+      />
 
       {/* Who We Are */}
       <section className="py-20 lg:py-28">
