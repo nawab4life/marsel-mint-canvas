@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Video, Shield, Fingerprint, Server, Monitor, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import heroSolutions from "@/assets/hero-solutions.jpg";
 import { SolutionCard } from "@/components/SolutionCard";
 
 export const Route = createFileRoute("/solutions")({
