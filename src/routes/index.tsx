@@ -24,6 +24,11 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { PartnerLogo } from "@/components/PartnerLogo";
 import { PageHero } from "@/components/PageHero";
 import heroHome from "@/assets/hero-home.jpg";
+import imgUcc from "@/assets/hero-ucc.jpg";
+import imgSecurity from "@/assets/hero-security.jpg";
+import imgId from "@/assets/hero-id.jpg";
+import imgIt from "@/assets/hero-it.jpg";
+import imgAv from "@/assets/hero-av.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,30 +47,35 @@ export const Route = createFileRoute("/")({
 const solutions = [
   {
     to: "/solutions/ucc",
+    image: imgUcc,
     title: "UCC Solutions",
     description: "Video conferencing, VoIP & collaboration systems for modern offices.",
     icon: Video,
   },
   {
     to: "/solutions/security",
+    image: imgSecurity,
     title: "Security Solutions",
     description: "CCTV, surveillance & intrusion systems built on Axis, CP Plus & Honeywell.",
     icon: Shield,
   },
   {
     to: "/solutions/id",
+    image: imgId,
     title: "ID Solutions",
     description: "Access control, biometric & time-attendance systems powered by HID.",
     icon: Fingerprint,
   },
   {
     to: "/solutions/it",
+    image: imgIt,
     title: "IT Solutions",
     description: "Network infrastructure, servers & managed IT support.",
     icon: Server,
   },
   {
     to: "/solutions/av",
+    image: imgAv,
     title: "AV Solutions",
     description: "Meeting rooms, digital signage & audio systems for corporate & hospitality.",
     icon: Monitor,

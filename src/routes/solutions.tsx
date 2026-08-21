@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PageHero } from "@/components/PageHero";
 import heroSolutions from "@/assets/hero-solutions.jpg";
+import imgUcc from "@/assets/hero-ucc.jpg";
+import imgSecurity from "@/assets/hero-security.jpg";
+import imgId from "@/assets/hero-id.jpg";
+import imgIt from "@/assets/hero-it.jpg";
+import imgAv from "@/assets/hero-av.jpg";
 import { SolutionCard } from "@/components/SolutionCard";
 
 export const Route = createFileRoute("/solutions")({
@@ -23,30 +28,35 @@ export const Route = createFileRoute("/solutions")({
 const solutions = [
   {
     to: "/solutions/ucc",
+    image: imgUcc,
     title: "UCC Solutions",
     description: "Video conferencing, VoIP & collaboration systems for modern offices. We design around how your teams actually meet and communicate.",
     icon: Video,
   },
   {
     to: "/solutions/security",
+    image: imgSecurity,
     title: "Security Solutions",
     description: "CCTV, surveillance & intrusion systems built on Axis, CP Plus & Honeywell. Coverage designed for your site layout and risk profile.",
     icon: Shield,
   },
   {
     to: "/solutions/id",
+    image: imgId,
     title: "ID Solutions",
     description: "Access control, biometric & time-attendance systems powered by HID. Identity management that fits your workforce and policies.",
     icon: Fingerprint,
   },
   {
     to: "/solutions/it",
+    image: imgIt,
     title: "IT Solutions",
     description: "Network infrastructure, servers & managed IT support. Reliable foundations for the applications your business depends on.",
     icon: Server,
   },
   {
     to: "/solutions/av",
+    image: imgAv,
     title: "AV Solutions",
     description: "Meeting rooms, digital signage & audio systems for corporate and hospitality spaces. Clear sound and image where it matters.",
     icon: Monitor,
