@@ -17,11 +17,14 @@ import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapXmlRouteImport } from './routes/sitemap.xml'
+import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
 import { Route as SolutionsAvRouteImport } from './routes/solutions.av'
 import { Route as SolutionsIdRouteImport } from './routes/solutions.id'
 import { Route as SolutionsItRouteImport } from './routes/solutions.it'
 import { Route as SolutionsSecurityRouteImport } from './routes/solutions.security'
 import { Route as SolutionsUccRouteImport } from './routes/solutions.ucc'
+import { Route as SolutionsUccIndexRouteImport } from './routes/solutions.ucc.index'
+import { Route as SolutionsUccServiceRouteImport } from './routes/solutions.ucc.$service'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -63,6 +66,11 @@ const SitemapXmlRoute = SitemapXmlRouteImport.update({
   path: '/sitemap/xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SolutionsRoute,
+} as any)
 const SolutionsAvRoute = SolutionsAvRouteImport.update({
   id: '/av',
   path: '/av',
@@ -88,6 +96,16 @@ const SolutionsUccRoute = SolutionsUccRouteImport.update({
   path: '/ucc',
   getParentRoute: () => SolutionsRoute,
 } as any)
+const SolutionsUccIndexRoute = SolutionsUccIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SolutionsUccRoute,
+} as any)
+const SolutionsUccServiceRoute = SolutionsUccServiceRouteImport.update({
+  id: '/$service',
+  path: '/$service',
+  getParentRoute: () => SolutionsUccRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -102,7 +120,10 @@ export interface FileRoutesByFullPath {
   '/solutions/id': typeof SolutionsIdRoute
   '/solutions/it': typeof SolutionsItRoute
   '/solutions/security': typeof SolutionsSecurityRoute
-  '/solutions/ucc': typeof SolutionsUccRoute
+  '/solutions/ucc': typeof SolutionsUccRouteWithChildren
+  '/solutions/': typeof SolutionsIndexRoute
+  '/solutions/ucc/$service': typeof SolutionsUccServiceRoute
+  '/solutions/ucc/': typeof SolutionsUccIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -111,13 +132,14 @@ export interface FileRoutesByTo {
   '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/partners': typeof PartnersRoute
-  '/solutions': typeof SolutionsRouteWithChildren
   '/sitemap/xml': typeof SitemapXmlRoute
   '/solutions/av': typeof SolutionsAvRoute
   '/solutions/id': typeof SolutionsIdRoute
   '/solutions/it': typeof SolutionsItRoute
   '/solutions/security': typeof SolutionsSecurityRoute
-  '/solutions/ucc': typeof SolutionsUccRoute
+  '/solutions': typeof SolutionsIndexRoute
+  '/solutions/ucc/$service': typeof SolutionsUccServiceRoute
+  '/solutions/ucc': typeof SolutionsUccIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -133,7 +155,10 @@ export interface FileRoutesById {
   '/solutions/id': typeof SolutionsIdRoute
   '/solutions/it': typeof SolutionsItRoute
   '/solutions/security': typeof SolutionsSecurityRoute
-  '/solutions/ucc': typeof SolutionsUccRoute
+  '/solutions/ucc': typeof SolutionsUccRouteWithChildren
+  '/solutions/': typeof SolutionsIndexRoute
+  '/solutions/ucc/$service': typeof SolutionsUccServiceRoute
+  '/solutions/ucc/': typeof SolutionsUccIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,6 +176,9 @@ export interface FileRouteTypes {
     | '/solutions/it'
     | '/solutions/security'
     | '/solutions/ucc'
+    | '/solutions/'
+    | '/solutions/ucc/$service'
+    | '/solutions/ucc/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -159,12 +187,13 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/industries'
     | '/partners'
-    | '/solutions'
     | '/sitemap/xml'
     | '/solutions/av'
     | '/solutions/id'
     | '/solutions/it'
     | '/solutions/security'
+    | '/solutions'
+    | '/solutions/ucc/$service'
     | '/solutions/ucc'
   id:
     | '__root__'
@@ -181,6 +210,9 @@ export interface FileRouteTypes {
     | '/solutions/it'
     | '/solutions/security'
     | '/solutions/ucc'
+    | '/solutions/'
+    | '/solutions/ucc/$service'
+    | '/solutions/ucc/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -252,6 +284,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapXmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/solutions/': {
+      id: '/solutions/'
+      path: '/'
+      fullPath: '/solutions/'
+      preLoaderRoute: typeof SolutionsIndexRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
     '/solutions/av': {
       id: '/solutions/av'
       path: '/av'
@@ -287,15 +326,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsUccRouteImport
       parentRoute: typeof SolutionsRoute
     }
+    '/solutions/ucc/': {
+      id: '/solutions/ucc/'
+      path: '/'
+      fullPath: '/solutions/ucc/'
+      preLoaderRoute: typeof SolutionsUccIndexRouteImport
+      parentRoute: typeof SolutionsUccRoute
+    }
+    '/solutions/ucc/$service': {
+      id: '/solutions/ucc/$service'
+      path: '/$service'
+      fullPath: '/solutions/ucc/$service'
+      preLoaderRoute: typeof SolutionsUccServiceRouteImport
+      parentRoute: typeof SolutionsUccRoute
+    }
   }
 }
+
+interface SolutionsUccRouteChildren {
+  SolutionsUccServiceRoute: typeof SolutionsUccServiceRoute
+  SolutionsUccIndexRoute: typeof SolutionsUccIndexRoute
+}
+
+const SolutionsUccRouteChildren: SolutionsUccRouteChildren = {
+  SolutionsUccServiceRoute: SolutionsUccServiceRoute,
+  SolutionsUccIndexRoute: SolutionsUccIndexRoute,
+}
+
+const SolutionsUccRouteWithChildren = SolutionsUccRoute._addFileChildren(
+  SolutionsUccRouteChildren,
+)
 
 interface SolutionsRouteChildren {
   SolutionsAvRoute: typeof SolutionsAvRoute
   SolutionsIdRoute: typeof SolutionsIdRoute
   SolutionsItRoute: typeof SolutionsItRoute
   SolutionsSecurityRoute: typeof SolutionsSecurityRoute
-  SolutionsUccRoute: typeof SolutionsUccRoute
+  SolutionsUccRoute: typeof SolutionsUccRouteWithChildren
+  SolutionsIndexRoute: typeof SolutionsIndexRoute
 }
 
 const SolutionsRouteChildren: SolutionsRouteChildren = {
@@ -303,7 +371,8 @@ const SolutionsRouteChildren: SolutionsRouteChildren = {
   SolutionsIdRoute: SolutionsIdRoute,
   SolutionsItRoute: SolutionsItRoute,
   SolutionsSecurityRoute: SolutionsSecurityRoute,
-  SolutionsUccRoute: SolutionsUccRoute,
+  SolutionsUccRoute: SolutionsUccRouteWithChildren,
+  SolutionsIndexRoute: SolutionsIndexRoute,
 }
 
 const SolutionsRouteWithChildren = SolutionsRoute._addFileChildren(
