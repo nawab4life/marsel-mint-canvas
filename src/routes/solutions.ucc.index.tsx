@@ -6,9 +6,9 @@ import { PageHero } from "@/components/PageHero";
 import { PartnerLogo } from "@/components/PartnerLogo";
 import { ProjectCard } from "@/components/ProjectCard";
 import { FaqSection } from "@/components/FaqSection";
-import { SOLUTIONS } from "@/data/solutions";
+import { getSolution } from "@/data/solutions";
 
-const solution = SOLUTIONS.ucc;
+const solution = getSolution("ucc")!;
 
 export const Route = createFileRoute("/solutions/ucc/")({
   head: () => ({
