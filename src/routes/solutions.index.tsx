@@ -11,7 +11,7 @@ import imgIt from "@/assets/hero-it.jpg";
 import imgAv from "@/assets/hero-av.jpg";
 import { SolutionCard } from "@/components/SolutionCard";
 
-export const Route = createFileRoute("/solutions")({
+export const Route = createFileRoute("/solutions/")({
   head: () => ({
     meta: [
       { title: "Solutions — MarselTech" },

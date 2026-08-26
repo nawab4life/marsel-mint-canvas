@@ -3,7 +3,7 @@ import { Building2, Hotel } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
 import heroImage from "@/assets/hero-ucc.jpg";
 
-export const Route = createFileRoute("/solutions/ucc")({
+export const Route = createFileRoute("/solutions/ucc/")({
   head: () => ({
     meta: [
       { title: "UCC Solutions — MarselTech" },
