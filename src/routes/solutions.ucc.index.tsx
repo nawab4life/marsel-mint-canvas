@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Building2, Hotel } from "lucide-react";
+import { ArrowRight, Building2, Check, Hotel } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PageHero } from "@/components/PageHero";
-import { PartnerLogo } from "@/components/PartnerLogo";
 import { ProjectCard } from "@/components/ProjectCard";
 import { FaqSection } from "@/components/FaqSection";
 import { getSolution } from "@/data/solutions";
@@ -17,7 +16,7 @@ export const Route = createFileRoute("/solutions/ucc/")({
       {
         name: "description",
         content:
-          "Unified communications in Dubai: Cisco video conferencing, VoIP telephony, room booking and wireless presentation systems designed, installed and supported by MarselTech.",
+          "Unified communications in Dubai: video conferencing, VoIP telephony, unified messaging, room booking and wireless presentation systems designed, installed and supported by MarselTech.",
       },
       { property: "og:title", content: "UCC Solutions in Dubai — MarselTech" },
       {
@@ -47,10 +46,6 @@ export const Route = createFileRoute("/solutions/ucc/")({
   }),
   component: UCCPage,
 });
-
-const partners = [
-  { name: "Cisco", description: "Unified communications and collaboration infrastructure." },
-];
 
 const industries = ["Corporate", "Hospitality", "Education", "Healthcare", "Government"];
 
@@ -107,29 +102,20 @@ function UCCPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What's Included"
-            title="Five UCC services, delivered as one system"
-            description="Each service below has its own page covering scope, features, industries served and common questions."
+            title="Five UCC capabilities, delivered as one system"
+            description="Each capability below is designed, installed and supported end to end — and combined into a single, coherent collaboration environment."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {solution.subServices.map((service) => (
-              <Link
+              <div
                 key={service.slug}
-                to="/solutions/ucc/$service"
-                params={{ service: service.slug }}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
+                className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm"
               >
                 <h3 className="text-lg font-semibold text-card-foreground">{service.title}</h3>
                 <p className="mt-2 flex-1 text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
-                {service.brands && (
-                  <p className="mt-4 text-sm font-medium text-primary">Brands: {service.brands}</p>
-                )}
-                <span className="mt-4 inline-flex items-center text-sm font-medium text-primary">
-                  Learn more
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -137,12 +123,31 @@ function UCCPage() {
 
       <section className="bg-muted/30 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Brands We Deploy" title="Authorized products we design around" />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {partners.map((partner) => (
-              <PartnerLogo key={partner.name} {...partner} />
+          <SectionHeading
+            eyebrow="Scope of Work"
+            title="What a typical UCC engagement covers"
+            description="Every project is scoped to your site, but most UCC deployments include the following."
+          />
+          <ul className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+            {[
+              "Site survey and room acoustics assessment",
+              "Video conferencing systems for rooms of every size",
+              "Cloud, on-premise or hybrid IP telephony with number porting",
+              "Unified messaging, presence and directory integration",
+              "Meeting-room booking panels with calendar synchronisation",
+              "Wireless presentation for staff and guest devices",
+              "Cabling, network readiness and PoE planning",
+              "User training, handover documentation and ongoing support",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 rounded-lg border border-border bg-card p-4 text-card-foreground shadow-sm"
+              >
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <span className="leading-relaxed">{item}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
