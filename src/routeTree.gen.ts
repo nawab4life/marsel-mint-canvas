@@ -15,8 +15,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolutionsRouteImport } from './routes/solutions'
-import { Route as SitemapXmlRouteImport } from './routes/sitemap.xml'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
 import { Route as SolutionsAvRouteImport } from './routes/solutions.av'
 import { Route as SolutionsIdRouteImport } from './routes/solutions.id'
@@ -56,14 +56,14 @@ const PartnersRoute = PartnersRouteImport.update({
   path: '/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SolutionsRoute = SolutionsRouteImport.update({
   id: '/solutions',
   path: '/solutions',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapXmlRoute = SitemapXmlRouteImport.update({
-  id: '/sitemap/xml',
-  path: '/sitemap/xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
@@ -114,8 +114,8 @@ export interface FileRoutesByFullPath {
   '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/partners': typeof PartnersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRouteWithChildren
-  '/sitemap/xml': typeof SitemapXmlRoute
   '/solutions/av': typeof SolutionsAvRoute
   '/solutions/id': typeof SolutionsIdRoute
   '/solutions/it': typeof SolutionsItRoute
@@ -132,7 +132,7 @@ export interface FileRoutesByTo {
   '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/partners': typeof PartnersRoute
-  '/sitemap/xml': typeof SitemapXmlRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions/av': typeof SolutionsAvRoute
   '/solutions/id': typeof SolutionsIdRoute
   '/solutions/it': typeof SolutionsItRoute
@@ -149,8 +149,8 @@ export interface FileRoutesById {
   '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/partners': typeof PartnersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRouteWithChildren
-  '/sitemap/xml': typeof SitemapXmlRoute
   '/solutions/av': typeof SolutionsAvRoute
   '/solutions/id': typeof SolutionsIdRoute
   '/solutions/it': typeof SolutionsItRoute
@@ -169,8 +169,8 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/industries'
     | '/partners'
+    | '/sitemap.xml'
     | '/solutions'
-    | '/sitemap/xml'
     | '/solutions/av'
     | '/solutions/id'
     | '/solutions/it'
@@ -187,7 +187,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/industries'
     | '/partners'
-    | '/sitemap/xml'
+    | '/sitemap.xml'
     | '/solutions/av'
     | '/solutions/id'
     | '/solutions/it'
@@ -203,8 +203,8 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/industries'
     | '/partners'
+    | '/sitemap.xml'
     | '/solutions'
-    | '/sitemap/xml'
     | '/solutions/av'
     | '/solutions/id'
     | '/solutions/it'
@@ -222,8 +222,8 @@ export interface RootRouteChildren {
   HowWeWorkRoute: typeof HowWeWorkRoute
   IndustriesRoute: typeof IndustriesRoute
   PartnersRoute: typeof PartnersRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRouteWithChildren
-  SitemapXmlRoute: typeof SitemapXmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -270,18 +270,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/solutions': {
       id: '/solutions'
       path: '/solutions'
       fullPath: '/solutions'
       preLoaderRoute: typeof SolutionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap/xml': {
-      id: '/sitemap/xml'
-      path: '/sitemap/xml'
-      fullPath: '/sitemap/xml'
-      preLoaderRoute: typeof SitemapXmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solutions/': {
@@ -386,8 +386,8 @@ const rootRouteChildren: RootRouteChildren = {
   HowWeWorkRoute: HowWeWorkRoute,
   IndustriesRoute: IndustriesRoute,
   PartnersRoute: PartnersRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRouteWithChildren,
-  SitemapXmlRoute: SitemapXmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
