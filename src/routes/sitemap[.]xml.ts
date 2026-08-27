@@ -1,4 +1,3 @@
-import { SOLUTIONS } from "@/data/solutions";
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
@@ -21,11 +20,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/about", changefreq: "monthly", priority: "0.8" },
           { path: "/solutions", changefreq: "monthly", priority: "0.9" },
           { path: "/solutions/ucc", changefreq: "monthly", priority: "0.8" },
-          ...(SOLUTIONS["ucc"]?.subServices ?? []).map((s) => ({
-            path: `/solutions/ucc/${s.slug}`,
-            changefreq: "monthly" as const,
-            priority: "0.7",
-          })),
+
           { path: "/solutions/security", changefreq: "monthly", priority: "0.8" },
           { path: "/solutions/id", changefreq: "monthly", priority: "0.8" },
           { path: "/solutions/it", changefreq: "monthly", priority: "0.8" },
