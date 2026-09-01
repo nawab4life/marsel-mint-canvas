@@ -61,7 +61,7 @@ function IndustriesPage() {
         alt="Hospital, hotel and campus interiors served by MarselTech"
         eager
         title="Industries We Serve"
-        description="We tailor our solutions to the operational realities of each sector — from office meeting rooms to hotel guest experiences."
+        description="Solutions tailored to the realities of each sector."
       />
 
       <section className="py-20 lg:py-28">

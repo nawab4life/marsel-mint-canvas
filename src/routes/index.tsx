@@ -128,13 +128,13 @@ function HomePage() {
         alt="MarselTech engineers installing network and rack infrastructure in a Dubai commercial building"
         eager
         size="large"
+        eyebrow="Dubai systems integrator"
         title={
           <>
-            Unified Communications, Security, IT & AV Solutions —{" "}
-            <span className="text-primary">Engineered for Dubai's Businesses</span>
+            Technology, <span className="text-primary">engineered on site</span>
           </>
         }
-        description="End-to-end technology integration across UCC, Security, ID, IT and AV — from consultation to after-sales support."
+        description="UCC, Security, ID, IT and AV — designed, installed and supported by us."
       >
         <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
           <Link to="/contact">Get a Quote</Link>
