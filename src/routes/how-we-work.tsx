@@ -36,7 +36,7 @@ function HowWeWorkPage() {
         alt="Engineer reviewing site drawings during project planning"
         eager
         title="How We Work"
-        description="Every project follows the same structured process, from first consultation to long-term support. This discipline is what makes a small operation deliver like a mature systems integrator."
+        description="One structured process, from first call to long-term support."
       />
 
       <section className="py-20 lg:py-28">

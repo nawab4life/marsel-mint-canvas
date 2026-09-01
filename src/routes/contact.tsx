@@ -54,7 +54,7 @@ function ContactPage() {
         alt="Modern technology company reception in Dubai"
         eager
         title="Contact Us"
-        description="Get in touch for a consultation, quote or support request. We'll respond as quickly as we can."
+        description="Consultation, quote or support — we'll get back to you quickly."
       />
 
       <section className="py-20 lg:py-28">

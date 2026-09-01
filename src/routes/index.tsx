@@ -10,19 +10,14 @@ import {
   Users,
   Wrench,
   MapPin,
-  Building2,
-  ShoppingBag,
-  Hotel,
-  GraduationCap,
-  Stethoscope,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SolutionCard } from "@/components/SolutionCard";
 import { ProcessStep } from "@/components/ProcessStep";
-import { ProjectCard } from "@/components/ProjectCard";
 import { PartnerLogo } from "@/components/PartnerLogo";
 import { PageHero } from "@/components/PageHero";
+
 import heroHome from "@/assets/hero-home.jpg";
 import imgUcc from "@/assets/hero-ucc.jpg";
 import imgSecurity from "@/assets/hero-security.jpg";
@@ -112,26 +107,8 @@ const processSteps = [
   { step: 4, title: "Support", description: "After-sales maintenance, troubleshooting and future scalability.", icon: Users },
 ];
 
-const projects = [
-  {
-    title: "Corporate Office — UCC & Network Rollout",
-    sector: "Corporate",
-    scope: "Deployed video conferencing, VoIP and structured cabling across a multi-floor Dubai office.",
-    icon: Building2,
-  },
-  {
-    title: "Retail Access Control Deployment",
-    sector: "Retail",
-    scope: "Installed HID access control and time-attendance system for a UAE retail chain.",
-    icon: ShoppingBag,
-  },
-  {
-    title: "Hospitality AV & Signage Installation",
-    sector: "Hospitality",
-    scope: "Delivered meeting room AV, digital signage and background audio for a Dubai hotel.",
-    icon: Hotel,
-  },
-];
+
+
 
 const partners = [
   { name: "Cisco", description: "Unified communications and collaboration infrastructure." },
@@ -151,13 +128,13 @@ function HomePage() {
         alt="MarselTech engineers installing network and rack infrastructure in a Dubai commercial building"
         eager
         size="large"
+        eyebrow="Dubai systems integrator"
         title={
           <>
-            Unified Communications, Security, IT & AV Solutions —{" "}
-            <span className="text-primary">Engineered for Dubai's Businesses</span>
+            Technology, <span className="text-primary">engineered on site</span>
           </>
         }
-        description="End-to-end technology integration across UCC, Security, ID, IT and AV — from consultation to after-sales support."
+        description="UCC, Security, ID, IT and AV — designed, installed and supported by us."
       >
         <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
           <Link to="/contact">Get a Quote</Link>
@@ -249,21 +226,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Project Experience */}
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Project Experience"
-            title="Real scope, real sectors — no invented client names"
-            description="A sample of project types we have delivered across Dubai and the UAE."
-          />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Partners */}
       <section className="py-20 lg:py-28">

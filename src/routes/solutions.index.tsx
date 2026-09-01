@@ -71,7 +71,7 @@ function SolutionsPage() {
         alt="Network switch, IP camera, access reader, IP phone and fiber cabling"
         eager
         title="Solutions"
-        description="At MarselTech, a solution is a complete system — not just a box. Every project is evaluated against reliability, scalability, security and budget-fit before we recommend a product mix."
+        description="Complete systems — designed, installed and supported."
       />
 
       <section className="py-20 lg:py-28">

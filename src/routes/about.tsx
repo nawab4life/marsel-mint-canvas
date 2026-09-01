@@ -55,7 +55,7 @@ function AboutPage() {
         alt="Dubai skyline at dusk"
         eager
         title="About MarselTech"
-        description="MarselTech has spent the past two years delivering Unified Communications, Security, ID, IT and AV solutions to businesses across Dubai — handling every stage from consultation to after-sales support."
+        description="A Dubai systems integrator delivering every stage in-house."
       />
 
       {/* Who We Are */}

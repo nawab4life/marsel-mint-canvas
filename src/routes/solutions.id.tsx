@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Building2, GraduationCap } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
 import heroImage from "@/assets/hero-id.jpg";
 
@@ -31,21 +30,6 @@ const partners = [
 
 const industries = ["Corporate", "Education", "Healthcare", "Retail"];
 
-const projects = [
-  {
-    title: "School Access & Attendance",
-    sector: "Education",
-    scope: "Deployed HID access control and time-attendance across a Dubai school campus.",
-    icon: GraduationCap,
-  },
-  {
-    title: "Office Access Control",
-    sector: "Corporate",
-    scope: "Installed card and biometric readers for a multi-tenant Dubai office.",
-    icon: Building2,
-  },
-];
-
 function IDPage() {
   return (
     <SolutionPageTemplate
@@ -57,7 +41,6 @@ function IDPage() {
       subServices={subServices}
       partners={partners}
       industries={industries}
-      projects={projects}
     />
   );
 }
