@@ -37,7 +37,7 @@ function PartnersPage() {
         alt="Business partnership handshake in a technology office"
         eager
         title="Partners"
-        description="We partner with and are trained on industry-leading platforms so we can deliver the right solution for your needs — not just the one we sell."
+        description="Trained across industry-leading platforms, not locked to one."
       />
 
       <section className="py-20 lg:py-28">
