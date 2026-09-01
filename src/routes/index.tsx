@@ -13,17 +13,16 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
-import { SolutionCard } from "@/components/SolutionCard";
 import { ProcessStep } from "@/components/ProcessStep";
 import { PartnerLogo } from "@/components/PartnerLogo";
 import { PageHero } from "@/components/PageHero";
 
 import heroHome from "@/assets/hero-home.jpg";
-import imgUcc from "@/assets/hero-ucc.jpg";
-import imgSecurity from "@/assets/hero-security.jpg";
-import imgId from "@/assets/hero-id.jpg";
-import imgIt from "@/assets/hero-it.jpg";
-import imgAv from "@/assets/hero-av.jpg";
+import bannerUcc from "@/assets/banner-ucc.jpg";
+import bannerSecurity from "@/assets/banner-security.jpg";
+import bannerId from "@/assets/banner-id.jpg";
+import bannerIt from "@/assets/banner-it.jpg";
+import bannerAv from "@/assets/banner-av.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
