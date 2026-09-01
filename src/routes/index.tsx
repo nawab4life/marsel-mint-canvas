@@ -174,17 +174,51 @@ function HomePage() {
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="py-20 lg:py-28">
+      {/* What We Do — solution banners */}
+      <section className="bg-foreground py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What We Do"
             title="Technology integration built around your operations"
             description="Five solution areas, one consistent delivery model — designed, procured, installed and supported in-house."
+            dark
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {solutions.map((solution) => (
-              <SolutionCard key={solution.to} {...solution} />
+          <div className="mt-14 space-y-6">
+            {solutionBanners.map((solution) => (
+              <Link
+                key={solution.to}
+                to={solution.to}
+                className="group relative isolate flex min-h-[300px] items-end overflow-hidden rounded-2xl border border-background/10 shadow-lg transition-all hover:border-primary/40 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)] sm:min-h-[340px]"
+              >
+                <img
+                  src={solution.image}
+                  alt={solution.alt}
+                  loading="lazy"
+                  width={1920}
+                  height={768}
+                  className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-foreground/95 via-foreground/60 to-foreground/10 transition-opacity duration-500 group-hover:via-foreground/50" />
+                <div className="absolute inset-x-0 bottom-0 -z-10 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="flex w-full flex-col gap-5 p-8 sm:flex-row sm:items-end sm:justify-between sm:p-12">
+                  <div className="max-w-xl">
+                    <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-foreground/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary backdrop-blur-sm">
+                      <solution.icon className="h-3.5 w-3.5" />
+                      {solution.eyebrow}
+                    </p>
+                    <h3 className="text-3xl font-bold tracking-tight text-background sm:text-4xl">
+                      {solution.title}
+                    </h3>
+                    <p className="mt-3 text-base leading-relaxed text-background/80">
+                      {solution.description}
+                    </p>
+                  </div>
+                  <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all group-hover:gap-3 group-hover:brightness-110">
+                    {solution.cta}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
