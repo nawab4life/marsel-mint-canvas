@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Building2, ShoppingBag } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
 import heroImage from "@/assets/hero-security.jpg";
 
@@ -36,21 +35,6 @@ const partners = [
 
 const industries = ["Corporate", "Retail", "Hospitality", "Education", "Healthcare"];
 
-const projects = [
-  {
-    title: "Retail Surveillance Refresh",
-    sector: "Retail",
-    scope: "Replaced analogue CCTV with IP cameras and remote viewing for a UAE retail chain.",
-    icon: ShoppingBag,
-  },
-  {
-    title: "Office Perimeter Security",
-    sector: "Corporate",
-    scope: "Installed intrusion detection, access control and CCTV for a Dubai office building.",
-    icon: Building2,
-  },
-];
-
 function SecurityPage() {
   return (
     <SolutionPageTemplate
@@ -62,7 +46,6 @@ function SecurityPage() {
       subServices={subServices}
       partners={partners}
       industries={industries}
-      projects={projects}
     />
   );
 }

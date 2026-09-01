@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Building2, Hotel } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
 import heroImage from "@/assets/hero-av.jpg";
 
@@ -33,21 +32,6 @@ const partners = [
 
 const industries = ["Corporate", "Hospitality", "Retail", "Education"];
 
-const projects = [
-  {
-    title: "Boardroom AV Upgrade",
-    sector: "Corporate",
-    scope: "Installed display, conferencing audio and control system for a Dubai boardroom.",
-    icon: Building2,
-  },
-  {
-    title: "Hotel Digital Signage",
-    sector: "Hospitality",
-    scope: "Deployed lobby and wayfinding signage across a Dubai hotel.",
-    icon: Hotel,
-  },
-];
-
 function AVPage() {
   return (
     <SolutionPageTemplate
@@ -59,7 +43,6 @@ function AVPage() {
       subServices={subServices}
       partners={partners}
       industries={industries}
-      projects={projects}
     />
   );
 }

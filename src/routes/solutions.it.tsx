@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Building2, Hotel } from "lucide-react";
 import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
 import heroImage from "@/assets/hero-it.jpg";
 
@@ -33,21 +32,6 @@ const partners = [
 
 const industries = ["Corporate", "Hospitality", "Education", "Retail"];
 
-const projects = [
-  {
-    title: "Hotel Network Refresh",
-    sector: "Hospitality",
-    scope: "Replaced core switching and Wi-Fi infrastructure for a Dubai hotel.",
-    icon: Hotel,
-  },
-  {
-    title: "Office Network Rollout",
-    sector: "Corporate",
-    scope: "Structured cabling, switching and server rack build for a new office fit-out.",
-    icon: Building2,
-  },
-];
-
 function ITPage() {
   return (
     <SolutionPageTemplate
@@ -59,7 +43,6 @@ function ITPage() {
       subServices={subServices}
       partners={partners}
       industries={industries}
-      projects={projects}
     />
   );
 }
