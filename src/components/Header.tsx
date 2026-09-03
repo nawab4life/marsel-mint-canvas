@@ -12,11 +12,8 @@ import {
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
   { to: "/solutions", label: "Solutions" },
-  { to: "/industries", label: "Industries" },
   { to: "/how-we-work", label: "How We Work" },
-  { to: "/partners", label: "Partners" },
   { to: "/contact", label: "Contact" },
 ];
 
