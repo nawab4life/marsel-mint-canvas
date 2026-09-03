@@ -10,11 +10,17 @@ import {
   Users,
   Wrench,
   MapPin,
+  Building2,
+  ShoppingBag,
+  Hotel,
+  GraduationCap,
+  Stethoscope,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProcessStep } from "@/components/ProcessStep";
 import { PartnerLogo } from "@/components/PartnerLogo";
+import { IndustryCard } from "@/components/IndustryCard";
 import { HeroSlider } from "@/components/HeroSlider";
 
 import heroHome from "@/assets/hero-home.jpg";
@@ -23,6 +29,12 @@ import bannerSecurity from "@/assets/banner-security.jpg";
 import bannerId from "@/assets/banner-id.jpg";
 import bannerIt from "@/assets/banner-it.jpg";
 import bannerAv from "@/assets/banner-av.jpg";
+import logoCisco from "@/assets/logo-cisco.png";
+import logoHid from "@/assets/logo-hid.png";
+import logoAxis from "@/assets/logo-axis.png";
+import logoAiphone from "@/assets/logo-aiphone.png";
+import logoCpPlus from "@/assets/logo-cpplus.png";
+import logoIriz from "@/assets/logo-iriz.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -125,12 +137,45 @@ const processSteps = [
 
 
 const partners = [
-  { name: "Cisco", description: "Unified communications and collaboration infrastructure." },
-  { name: "HID", description: "Access control and identity solutions." },
-  { name: "Axis", description: "IP video surveillance and network cameras." },
-  { name: "Aiphone", description: "Intercom and video door entry systems." },
-  { name: "CP Plus", description: "CCTV and surveillance product range." },
-  { name: "IRIZ", description: "Specialized security and communication products." },
+  { name: "Cisco", logo: logoCisco, description: "Unified communications, collaboration and network infrastructure." },
+  { name: "HID", logo: logoHid, description: "Access control, credentials and identity management solutions." },
+  { name: "Axis", logo: logoAxis, description: "IP video surveillance and network cameras." },
+  { name: "Aiphone", logo: logoAiphone, description: "Intercom and video door entry systems." },
+  { name: "CP Plus", logo: logoCpPlus, description: "CCTV and surveillance product range." },
+  { name: "IRIZ", logo: logoIriz, description: "Specialized security and communication products." },
+];
+
+const industries = [
+  {
+    title: "Corporate / Enterprise Offices",
+    description: "Meeting room AV, UCC, network infrastructure, access control and CCTV for offices of all sizes.",
+    solutions: ["UCC", "Security", "ID", "IT", "AV"],
+    icon: Building2,
+  },
+  {
+    title: "Retail",
+    description: "Surveillance, access control, digital signage and network connectivity for stores and malls.",
+    solutions: ["Security", "ID", "AV", "IT"],
+    icon: ShoppingBag,
+  },
+  {
+    title: "Hospitality",
+    description: "Guest room entertainment, meeting room AV, digital signage, Wi-Fi and security for hotels.",
+    solutions: ["AV", "IT", "Security", "UCC"],
+    icon: Hotel,
+  },
+  {
+    title: "Education",
+    description: "Classroom AV, access control, time-attendance, CCTV and campus networks for schools and universities.",
+    solutions: ["AV", "ID", "Security", "IT"],
+    icon: GraduationCap,
+  },
+  {
+    title: "Healthcare",
+    description: "Secure access control, surveillance, intercom and network infrastructure for clinics and medical facilities.",
+    solutions: ["Security", "ID", "IT", "UCC"],
+    icon: Stethoscope,
+  },
 ];
 
 const heroSlides = [
@@ -229,6 +274,30 @@ function HomePage() {
       </section>
 
 
+      {/* Industries */}
+      <section className="bg-muted/30 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Industries We Serve"
+            title="Solutions tailored to the realities of each sector"
+            description="From corporate offices to hospitals, we design around how each environment actually operates."
+          />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {industries.map((industry) => (
+              <IndustryCard key={industry.title} {...industry} />
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link to="/contact">
+                Discuss Your Sector
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Partners */}
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -241,6 +310,14 @@ function HomePage() {
             {partners.map((partner) => (
               <PartnerLogo key={partner.name} {...partner} />
             ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link to="/contact">
+                Talk to Our Team
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
