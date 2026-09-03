@@ -4,9 +4,9 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   company: [
-    { to: "/about", label: "About Us" },
+    { to: "/", label: "Home" },
     { to: "/how-we-work", label: "How We Work" },
-    { to: "/partners", label: "Partners" },
+    { to: "/solutions", label: "Solutions" },
     { to: "/contact", label: "Contact" },
   ],
   solutions: [
