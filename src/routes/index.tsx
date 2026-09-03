@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProcessStep } from "@/components/ProcessStep";
 import { PartnerLogo } from "@/components/PartnerLogo";
-import { PageHero } from "@/components/PageHero";
+import { HeroSlider } from "@/components/HeroSlider";
 
 import heroHome from "@/assets/hero-home.jpg";
 import bannerUcc from "@/assets/banner-ucc.jpg";
