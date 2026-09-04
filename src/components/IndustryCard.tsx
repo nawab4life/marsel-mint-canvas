@@ -1,5 +1,4 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowRight, type LucideIcon } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
 
 interface IndustryCardProps {
   title: string;
