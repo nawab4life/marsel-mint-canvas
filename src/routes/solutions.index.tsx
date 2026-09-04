@@ -70,6 +70,8 @@ function SolutionsPage() {
         image={heroSolutions}
         alt="Network switch, IP camera, access reader, IP phone and fiber cabling"
         eager
+        size="large"
+        eyebrow="What we deliver"
         title="Solutions"
         description="Complete systems — designed, installed and supported."
       />
