@@ -72,6 +72,7 @@ function UCCPage() {
         image={solution.image}
         alt={solution.imageAlt}
         eager
+        size="large"
         eyebrow="Solutions"
         title="UCC Solutions in Dubai"
         description="Voice, video, messaging and meeting rooms — unified into one reliable workplace experience."

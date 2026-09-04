@@ -39,6 +39,7 @@ export function SolutionPageTemplate({
         image={image}
         alt={imageAlt}
         eager
+        size="large"
         eyebrow="Solutions"
         title={title}
         description={tagline}
