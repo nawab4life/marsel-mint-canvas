@@ -1,46 +1,83 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
-import heroImage from "@/assets/hero-id.jpg";
+import { SolutionDetailPage } from "@/components/SolutionDetailPage";
+import { getSolution } from "@/data/solutions";
+
+const solution = getSolution("id")!;
 
 export const Route = createFileRoute("/solutions/id")({
   head: () => ({
     meta: [
-      { title: "ID Solutions — MarselTech" },
-      { name: "description", content: "Access control, biometric and time-attendance systems powered by HID for Dubai organizations." },
-      { property: "og:title", content: "ID Solutions — MarselTech" },
-      { property: "og:description", content: "Access control, biometric and time-attendance systems powered by HID for Dubai organizations." },
+      { title: "ID & Access Control Solutions in Dubai | MarselTech" },
+      {
+        name: "description",
+        content:
+          "ID solutions in Dubai: access control, time and attendance, visitor management, biometric identification and on-site card issuance, designed and supported by MarselTech.",
+      },
+      { property: "og:title", content: "ID Solutions in Dubai — MarselTech" },
+      {
+        property: "og:description",
+        content:
+          "Access control, time-attendance, visitor management, biometrics and badge issuance for organisations across Dubai and the UAE.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/solutions/id" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/solutions/id" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: solution.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }),
+      },
     ],
   }),
   component: IDPage,
 });
 
-const subServices = [
-  { title: "Access Control Systems", description: "Door controllers, readers and credentials that manage entry by person, time and zone.", brands: "HID" },
-  { title: "Time & Attendance Systems", description: "Clock-in/clock-out solutions integrated with payroll and HR systems.", brands: "HID" },
-  { title: "Visitor Management Systems", description: "Pre-registration, badge printing and host notifications for visitor entry.", brands: "Multiple" },
-  { title: "Biometric Identification", description: "Fingerprint, face and palm recognition for high-assurance identity verification.", brands: "HID" },
-  { title: "Card Issuance & Printing", description: "On-site badge printing and credential personalization.", brands: "HID" },
+const outcomes = [
+  { value: "1", label: "One credential for doors, attendance and visitor flow" },
+  { value: "5", label: "Core capabilities delivered as one identity system" },
+  { value: "360°", label: "Survey, design, install, train and support" },
 ];
 
-const partners = [
-  { name: "HID", description: "Access control and identity solutions." },
+const scope = [
+  "Door schedule, zoning and access policy workshop",
+  "Controllers, readers and credential technology selection",
+  "Biometric enrolment with encrypted template handling",
+  "Time and attendance rules mapped to payroll and HR exports",
+  "Visitor pre-registration, badge printing and host notifications",
+  "On-site card issuance, encoding and artwork setup",
+  "Integration with CCTV, intrusion and building systems",
+  "Administrator training, documentation and ongoing support",
 ];
-
-const industries = ["Corporate", "Education", "Healthcare", "Retail"];
 
 function IDPage() {
   return (
-    <SolutionPageTemplate
+    <SolutionDetailPage
       title="ID Solutions"
-      tagline="Identity and access, managed properly"
-      overview="Identity solutions control who goes where, when and for how long. We design access control, time-attendance and visitor management systems that fit your policies without creating friction for staff and guests."
-      image={heroImage}
-      imageAlt="ID card printer producing employee access badges"
-      subServices={subServices}
-      partners={partners}
-      industries={industries}
+      heroTitle="ID & Access Solutions in Dubai"
+      heroDescription="Control who goes where, when and for how long — without adding friction to the working day."
+      image={solution.image}
+      imageAlt={solution.imageAlt}
+      intro="Identity systems decide who enters, what they can reach and how that is recorded. We design access control, attendance, visitor management and credential issuance as one policy-driven platform for offices, campuses and facilities across Dubai and the UAE."
+      outcomes={outcomes}
+      capabilitiesTitle="Five identity capabilities, delivered as one system"
+      capabilitiesDescription="Each capability is designed, installed and supported end to end, then unified under a single credential and policy set."
+      subServices={solution.subServices}
+      scopeTitle="What a typical ID engagement covers"
+      scopeDescription="Every project is scoped to your policies and site, but most deployments include the following."
+      scope={scope}
+      industries={["Corporate", "Education", "Healthcare", "Retail", "Government", "Logistics"]}
+      faqTitle="ID and access questions we get asked"
+      faqs={solution.faqs}
     />
   );
 }

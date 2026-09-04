@@ -1,51 +1,83 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SolutionPageTemplate } from "@/components/SolutionPageTemplate";
-import heroImage from "@/assets/hero-security.jpg";
+import { SolutionDetailPage } from "@/components/SolutionDetailPage";
+import { getSolution } from "@/data/solutions";
+
+const solution = getSolution("security")!;
 
 export const Route = createFileRoute("/solutions/security")({
   head: () => ({
     meta: [
-      { title: "Security Solutions — MarselTech" },
-      { name: "description", content: "CCTV, surveillance and intrusion systems built on Axis, CP Plus and Honeywell for Dubai businesses." },
-      { property: "og:title", content: "Security Solutions — MarselTech" },
-      { property: "og:description", content: "CCTV, surveillance and intrusion systems built on Axis, CP Plus and Honeywell for Dubai businesses." },
+      { title: "Security Systems in Dubai — CCTV & Access Control | MarselTech" },
+      {
+        name: "description",
+        content:
+          "Security systems in Dubai: CCTV and video surveillance, access control, intrusion alarms, intercom and centralised monitoring — surveyed, installed and supported by MarselTech.",
+      },
+      { property: "og:title", content: "Security Solutions in Dubai — MarselTech" },
+      {
+        property: "og:description",
+        content:
+          "CCTV, access control, intrusion detection, intercom and remote monitoring for premises across Dubai and the UAE.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/solutions/security" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/solutions/security" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: solution.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }),
+      },
     ],
   }),
   component: SecurityPage,
 });
 
-const subServices = [
-  { title: "CCTV & Video Surveillance", description: "IP cameras, NVRs and video analytics configured for coverage, retention and remote access.", brands: "Axis, CP Plus" },
-  { title: "Access Control", description: "Card, biometric and mobile credential systems to control who enters your premises.", brands: "HID" },
-  { title: "Intrusion Detection & Alarms", description: "Perimeter and interior alarm systems with monitoring integration.", brands: "Honeywell" },
-  { title: "Intercom & Video Door Entry", description: "Audio and video intercom systems for entry points and reception areas.", brands: "Aiphone" },
-  { title: "Integrated Command & Control", description: "Unified security dashboards for larger sites that need centralized monitoring.", brands: "Multiple" },
-  { title: "Remote Monitoring & Maintenance", description: "Off-site health checks and troubleshooting to keep systems online.", brands: "Multiple" },
+const outcomes = [
+  { value: "24/7", label: "Coverage designed around real site risk, not camera counts" },
+  { value: "6", label: "Core capabilities delivered as one security system" },
+  { value: "360°", label: "Survey, design, install, train and support" },
 ];
 
-const partners = [
-  { name: "Axis", description: "IP video surveillance and network cameras." },
-  { name: "CP Plus", description: "CCTV and surveillance product range." },
-  { name: "HID", description: "Access control and identity solutions." },
-  { name: "Aiphone", description: "Intercom and video door entry systems." },
-  { name: "Honeywell", description: "Intrusion detection and alarm systems." },
+const scope = [
+  "Site risk survey with camera positions and coverage mapping",
+  "IP camera, NVR and storage sizing for required retention",
+  "Access control doors, readers, credentials and zoning rules",
+  "Intrusion detection for perimeter and interior areas",
+  "Intercom and video door entry at gates and reception",
+  "Network, PoE and containment planning with clean cable finishing",
+  "Central monitoring dashboards and operator training",
+  "Preventive maintenance, remote health checks and support response",
 ];
-
-const industries = ["Corporate", "Retail", "Hospitality", "Education", "Healthcare"];
 
 function SecurityPage() {
   return (
-    <SolutionPageTemplate
+    <SolutionDetailPage
       title="Security Solutions"
-      tagline="Visible protection, reliable coverage"
-      overview="We design security systems that match real site risks — from single retail stores to multi-zone corporate buildings. Our focus is on clear coverage, genuine warranties and systems you can actually operate."
-      image={heroImage}
-      imageAlt="Security control room with CCTV video wall"
-      subServices={subServices}
-      partners={partners}
-      industries={industries}
+      heroTitle="Security Systems in Dubai"
+      heroDescription="Surveillance, access, alarms and monitoring — engineered around how your site actually works."
+      image={solution.image}
+      imageAlt={solution.imageAlt}
+      intro="We design security systems that match real site risks — from single retail units to multi-zone corporate buildings. Cameras, access, alarms and intercom are planned together so your team monitors one coherent system instead of four disconnected ones."
+      outcomes={outcomes}
+      capabilitiesTitle="Six security capabilities, delivered as one system"
+      capabilitiesDescription="Each capability is surveyed, installed and supported end to end, then integrated into a single monitoring environment."
+      subServices={solution.subServices}
+      scopeTitle="What a typical security engagement covers"
+      scopeDescription="Every project is scoped to your premises, but most deployments include the following."
+      scope={scope}
+      industries={["Corporate", "Retail", "Hospitality", "Education", "Healthcare", "Logistics"]}
+      faqTitle="Security questions we get asked"
+      faqs={solution.faqs}
     />
   );
 }
