@@ -35,6 +35,7 @@ function HowWeWorkPage() {
         image={heroProcess}
         alt="Engineer reviewing site drawings during project planning"
         eager
+        size="large"
         title="How We Work"
         description="One structured process, from first call to long-term support."
       />

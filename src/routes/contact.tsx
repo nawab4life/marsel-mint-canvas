@@ -53,6 +53,7 @@ function ContactPage() {
         image={heroContact}
         alt="Modern technology company reception in Dubai"
         eager
+        size="large"
         title="Contact Us"
         description="Consultation, quote or support — we'll get back to you quickly."
       />
