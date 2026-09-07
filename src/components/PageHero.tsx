@@ -38,7 +38,7 @@ export function PageHero({
       <div
         className={
           size === "large"
-            ? "mx-auto flex min-h-[70vh] w-full max-w-7xl items-end px-4 pb-16 pt-32 sm:px-6 lg:px-8 lg:pb-24 lg:pt-48"
+            ? "mx-auto flex h-[70vh] min-h-[32rem] w-full max-w-7xl items-end px-4 pb-16 pt-32 sm:px-6 lg:px-8 lg:pb-24 lg:pt-48"
             : "mx-auto flex min-h-[46vh] w-full max-w-7xl items-end px-4 pb-12 pt-28 sm:px-6 lg:px-8 lg:pb-16 lg:pt-36"
         }
       >
