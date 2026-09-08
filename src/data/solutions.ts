@@ -1201,6 +1201,56 @@ export const SOLUTIONS: Record<string, SolutionData> = {
         answer:
           "Yes. Annual maintenance contracts cover firmware, remote diagnostics, on-site response and manufacturer warranty handling.",
       },
+      {
+        question: "Can you integrate UCC with our existing Microsoft 365 or Google Workspace tenant?",
+        answer:
+          "Yes. Room systems, calendaring, presence and single sign-on are configured against your existing tenant so staff keep the same identity and the same meeting platform they already use, with no duplicate licences.",
+      },
+      {
+        question: "What network and bandwidth requirements should our IT team plan for?",
+        answer:
+          "Voice and video are latency-sensitive, so we specify QoS marking on the LAN and a sized internet uplink with prioritised voice traffic. We document the VLAN, PoE budget and switch port configuration needed during the survey so your IT team can plan capacity.",
+      },
+      {
+        question: "Is the VoIP calling legally compliant in the UAE?",
+        answer:
+          "Business VoIP is delivered through UAE-licensed carriers under the TDRA framework. We configure SIP trunks through a compliant provider and document the arrangement so your procurement and legal teams have what they need.",
+      },
+      {
+        question: "Can we keep our existing phone numbers and extensions?",
+        answer:
+          "Yes. Numbers are ported to the new platform and extensions are mapped from your current dial plan, with cutover scheduled outside working hours so there is no window where calls go unanswered.",
+      },
+      {
+        question: "How do you handle moves, adds and changes after go-live?",
+        answer:
+          "Minor changes — new extensions, room reconfigurations, new hunt groups — are handled under the support contract, usually remotely. We also train an administrator so day-to-day changes can be made internally without a service call.",
+      },
+      {
+        question: "What warranty and support SLAs do you offer?",
+        answer:
+          "Manufacturer warranty applies to hardware and is handled on your behalf. Our maintenance contracts add defined response times — typically one-hour remote response and next-business-day on-site in Dubai — with optional faster tiers for critical sites.",
+      },
+      {
+        question: "Can the system scale as we add floors or staff?",
+        answer:
+          "Yes. The platforms we deploy are licence-based and scale per user and per room, so you add endpoints and capacity incrementally rather than replacing the core. We document the growth path at handover.",
+      },
+      {
+        question: "Do you provide documentation and as-built drawings?",
+        answer:
+          "Yes. Handover includes the dial plan, port schedule, IP addressing, room configurations, admin credentials and a quick-reference guide for each room — the pack your IT or facilities team needs to run the system.",
+      },
+      {
+        question: "How do you train staff so adoption actually happens?",
+        answer:
+          "Short role-specific sessions during the first two weeks, laminated quick-reference cards in each room, and a named contact for questions. We also run an adoption review after go-live to catch teams still on the old tools.",
+      },
+      {
+        question: "Can you work alongside our fit-out or IT contractor?",
+        answer:
+          "Yes. We coordinate containment, power, mounting positions and network drops with the fit-out and IT contractors during the build, which is far cheaper than retrofitting cabling or power after the ceiling is closed.",
+      },
     ],
   },
   security: {
@@ -1224,6 +1274,56 @@ export const SOLUTIONS: Record<string, SolutionData> = {
         question: "Do you offer maintenance contracts?",
         answer:
           "Yes, covering remote health monitoring, preventive visits, firmware updates and defined on-site response times.",
+      },
+      {
+        question: "What is SIRA compliance and does my site need it?",
+        answer:
+          "SIRA is Dubai's Security Industry regulatory authority. Certain premises — jewellery, gold and diamond trade, banks, exchange houses and some commercial buildings — must use SIRA-approved equipment and an approved consultant for certification. We design to those requirements and coordinate with your consultant.",
+      },
+      {
+        question: "How is footage stored and how long can we keep it?",
+        answer:
+          "Footage is recorded to an NVR with storage sized to your retention requirement — 30 days is common for offices and retail, longer where regulation or insurance demands. We show the storage calculation (camera count, resolution, frame rate) in the quote.",
+      },
+      {
+        question: "Can cameras and access control run on our existing network?",
+        answer:
+          "They can, but we strongly recommend VLAN segmentation so CCTV, access control and corporate traffic stay isolated. This protects your servers if a camera or IoT device is compromised and keeps video traffic from saturating the business LAN.",
+      },
+      {
+        question: "What power and cabling does a security system need?",
+        answer:
+          "IP cameras and readers are powered over PoE, so a single data drop per device is enough. We size PoE switches for the total budget and provide battery backup for critical devices so recording and door control survive a short power cut.",
+      },
+      {
+        question: "How do you secure remote viewing without exposing the recorder?",
+        answer:
+          "We never use open port forwarding. Remote access runs through a controlled VPN or the manufacturer's cloud platform with per-user accounts and logged sessions, so the recorder is never directly exposed to the internet.",
+      },
+      {
+        question: "Can the system integrate with our existing HR, payroll or building management platform?",
+        answer:
+          "Badge events can feed time-and-attendance and HR systems, and alarms can signal the building management or fire alarm system. We confirm supported integrations during the survey before proposing anything.",
+      },
+      {
+        question: "What happens to doors during a fire alarm or power failure?",
+        answer:
+          "Doors on escape routes are wired fail-safe and release automatically on alarm or power loss, satisfying Civil Defence requirements. Secure internal doors can be fail-secure with battery backup where your consultant approves.",
+      },
+      {
+        question: "How do you prevent false alarms from the intrusion system?",
+        answer:
+          "Correct detector selection and placement, dual-technology sensors in difficult areas, and CCTV verification before escalation. Most false alarms trace back to a detector aimed at an air-conditioning outlet or a moving blind.",
+      },
+      {
+        question: "What warranty applies to security hardware?",
+        answer:
+          "Manufacturer warranty applies to cameras, recorders, controllers and readers, and we handle claims on your behalf. Our maintenance contract adds remote monitoring, preventive visits and defined response times beyond the warranty.",
+      },
+      {
+        question: "Can you take over and maintain a system another vendor installed?",
+        answer:
+          "Yes, after a condition survey. We document what is failing, unsupported or non-compliant before taking over so both sides know what is being adopted and what needs remediation.",
       },
     ],
   },
