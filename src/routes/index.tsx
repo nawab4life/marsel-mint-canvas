@@ -323,19 +323,26 @@ function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-primary py-16 lg:py-24">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
+      <section className="relative overflow-hidden bg-[oklch(0.16_0.01_145)] py-16 lg:py-24">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-70"
+          style={{
+            background:
+              "radial-gradient(60% 80% at 50% 0%, oklch(0.45 0.13 145 / 0.35), transparent 70%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to discuss your project?
           </h2>
-          <p className="mt-4 text-lg text-primary-foreground/90">
+          <p className="mt-4 text-lg text-white/70">
             Book a consultation and we'll recommend the right mix of technology for your space and budget.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
               <Link to="/contact">Book a Consultation</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild size="lg" variant="outline" className="border-white/25 bg-transparent text-white hover:bg-white/10">
               <a href="tel:+971000000000">Call Us</a>
             </Button>
           </div>
