@@ -20,20 +20,21 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[oklch(0.21_0.04_145)] text-white">
-      {/* subtle emerald glow */}
+    <footer className="relative overflow-hidden bg-[oklch(0.14_0.005_145)] text-white">
+      {/* emerald top edge + glow */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.65_0.18_145)] to-transparent" />
       <div
-        className="pointer-events-none absolute inset-0 opacity-60"
+        className="pointer-events-none absolute inset-0 opacity-50"
         style={{
           background:
-            "radial-gradient(60% 80% at 15% 0%, oklch(0.35 0.10 145 / 0.55), transparent 70%), radial-gradient(50% 70% at 100% 100%, oklch(0.30 0.08 145 / 0.45), transparent 70%)",
+            "radial-gradient(50% 70% at 100% 0%, oklch(0.45 0.12 145 / 0.40), transparent 70%)",
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <MarselLogo />
-            <p className="text-sm leading-relaxed text-white/70">
+            <p className="text-sm leading-relaxed text-white/60">
               End-to-end technology integration across UCC, Security, ID, IT and AV — from consultation to after-sales support.
             </p>
           </div>
@@ -45,7 +46,7 @@ export function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm text-white/70 hover:text-[oklch(0.85_0.15_145)] transition-colors"
+                    className="text-sm text-white/60 hover:text-[oklch(0.75_0.15_145)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -61,7 +62,7 @@ export function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm text-white/70 hover:text-[oklch(0.85_0.15_145)] transition-colors"
+                    className="text-sm text-white/60 hover:text-[oklch(0.75_0.15_145)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -72,20 +73,20 @@ export function Footer() {
 
           <div>
             <h4 className="mb-4 text-sm font-semibold text-white">Contact</h4>
-            <ul className="space-y-3 text-sm text-white/70">
+            <ul className="space-y-3 text-sm text-white/60">
               <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[oklch(0.75_0.15_145)]" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[oklch(0.65_0.15_145)]" />
                 <span>Dubai, United Arab Emirates</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-[oklch(0.75_0.15_145)]" />
-                <a href="tel:+971000000000" className="hover:text-[oklch(0.85_0.15_145)] transition-colors">
+                <Phone className="h-4 w-4 shrink-0 text-[oklch(0.65_0.15_145)]" />
+                <a href="tel:+971000000000" className="hover:text-[oklch(0.75_0.15_145)] transition-colors">
                   +971 00 000 0000
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 shrink-0 text-[oklch(0.75_0.15_145)]" />
-                <a href="mailto:info@marseltech.ae" className="hover:text-[oklch(0.85_0.15_145)] transition-colors">
+                <Mail className="h-4 w-4 shrink-0 text-[oklch(0.65_0.15_145)]" />
+                <a href="mailto:info@marseltech.ae" className="hover:text-[oklch(0.75_0.15_145)] transition-colors">
                   info@marseltech.ae
                 </a>
               </li>
@@ -94,14 +95,14 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="text-sm text-white/60">
+          <p className="text-sm text-white/50">
             &copy; {new Date().getFullYear()} MarselTech. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-white/60 hover:text-[oklch(0.85_0.15_145)] transition-colors">
+            <a href="#" className="text-sm text-white/50 hover:text-[oklch(0.75_0.15_145)] transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-sm text-white/60 hover:text-[oklch(0.85_0.15_145)] transition-colors">
+            <a href="#" className="text-sm text-white/50 hover:text-[oklch(0.75_0.15_145)] transition-colors">
               Terms of Service
             </a>
           </div>
