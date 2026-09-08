@@ -1275,6 +1275,56 @@ export const SOLUTIONS: Record<string, SolutionData> = {
         answer:
           "Yes, covering remote health monitoring, preventive visits, firmware updates and defined on-site response times.",
       },
+      {
+        question: "What is SIRA compliance and does my site need it?",
+        answer:
+          "SIRA is Dubai's Security Industry regulatory authority. Certain premises — jewellery, gold and diamond trade, banks, exchange houses and some commercial buildings — must use SIRA-approved equipment and an approved consultant for certification. We design to those requirements and coordinate with your consultant.",
+      },
+      {
+        question: "How is footage stored and how long can we keep it?",
+        answer:
+          "Footage is recorded to an NVR with storage sized to your retention requirement — 30 days is common for offices and retail, longer where regulation or insurance demands. We show the storage calculation (camera count, resolution, frame rate) in the quote.",
+      },
+      {
+        question: "Can cameras and access control run on our existing network?",
+        answer:
+          "They can, but we strongly recommend VLAN segmentation so CCTV, access control and corporate traffic stay isolated. This protects your servers if a camera or IoT device is compromised and keeps video traffic from saturating the business LAN.",
+      },
+      {
+        question: "What power and cabling does a security system need?",
+        answer:
+          "IP cameras and readers are powered over PoE, so a single data drop per device is enough. We size PoE switches for the total budget and provide battery backup for critical devices so recording and door control survive a short power cut.",
+      },
+      {
+        question: "How do you secure remote viewing without exposing the recorder?",
+        answer:
+          "We never use open port forwarding. Remote access runs through a controlled VPN or the manufacturer's cloud platform with per-user accounts and logged sessions, so the recorder is never directly exposed to the internet.",
+      },
+      {
+        question: "Can the system integrate with our existing HR, payroll or building management platform?",
+        answer:
+          "Badge events can feed time-and-attendance and HR systems, and alarms can signal the building management or fire alarm system. We confirm supported integrations during the survey before proposing anything.",
+      },
+      {
+        question: "What happens to doors during a fire alarm or power failure?",
+        answer:
+          "Doors on escape routes are wired fail-safe and release automatically on alarm or power loss, satisfying Civil Defence requirements. Secure internal doors can be fail-secure with battery backup where your consultant approves.",
+      },
+      {
+        question: "How do you prevent false alarms from the intrusion system?",
+        answer:
+          "Correct detector selection and placement, dual-technology sensors in difficult areas, and CCTV verification before escalation. Most false alarms trace back to a detector aimed at an air-conditioning outlet or a moving blind.",
+      },
+      {
+        question: "What warranty applies to security hardware?",
+        answer:
+          "Manufacturer warranty applies to cameras, recorders, controllers and readers, and we handle claims on your behalf. Our maintenance contract adds remote monitoring, preventive visits and defined response times beyond the warranty.",
+      },
+      {
+        question: "Can you take over and maintain a system another vendor installed?",
+        answer:
+          "Yes, after a condition survey. We document what is failing, unsupported or non-compliant before taking over so both sides know what is being adopted and what needs remediation.",
+      },
     ],
   },
   id: {
