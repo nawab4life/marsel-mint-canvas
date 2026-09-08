@@ -33,7 +33,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <MarselLogo />
+            <MarselLogo onDark />
             <p className="text-sm leading-relaxed text-white/60">
               End-to-end technology integration across UCC, Security, ID, IT and AV — from consultation to after-sales support.
             </p>
