@@ -1201,6 +1201,56 @@ export const SOLUTIONS: Record<string, SolutionData> = {
         answer:
           "Yes. Annual maintenance contracts cover firmware, remote diagnostics, on-site response and manufacturer warranty handling.",
       },
+      {
+        question: "Can you integrate UCC with our existing Microsoft 365 or Google Workspace tenant?",
+        answer:
+          "Yes. Room systems, calendaring, presence and single sign-on are configured against your existing tenant so staff keep the same identity and the same meeting platform they already use, with no duplicate licences.",
+      },
+      {
+        question: "What network and bandwidth requirements should our IT team plan for?",
+        answer:
+          "Voice and video are latency-sensitive, so we specify QoS marking on the LAN and a sized internet uplink with prioritised voice traffic. We document the VLAN, PoE budget and switch port configuration needed during the survey so your IT team can plan capacity.",
+      },
+      {
+        question: "Is the VoIP calling legally compliant in the UAE?",
+        answer:
+          "Business VoIP is delivered through UAE-licensed carriers under the TDRA framework. We configure SIP trunks through a compliant provider and document the arrangement so your procurement and legal teams have what they need.",
+      },
+      {
+        question: "Can we keep our existing phone numbers and extensions?",
+        answer:
+          "Yes. Numbers are ported to the new platform and extensions are mapped from your current dial plan, with cutover scheduled outside working hours so there is no window where calls go unanswered.",
+      },
+      {
+        question: "How do you handle moves, adds and changes after go-live?",
+        answer:
+          "Minor changes — new extensions, room reconfigurations, new hunt groups — are handled under the support contract, usually remotely. We also train an administrator so day-to-day changes can be made internally without a service call.",
+      },
+      {
+        question: "What warranty and support SLAs do you offer?",
+        answer:
+          "Manufacturer warranty applies to hardware and is handled on your behalf. Our maintenance contracts add defined response times — typically one-hour remote response and next-business-day on-site in Dubai — with optional faster tiers for critical sites.",
+      },
+      {
+        question: "Can the system scale as we add floors or staff?",
+        answer:
+          "Yes. The platforms we deploy are licence-based and scale per user and per room, so you add endpoints and capacity incrementally rather than replacing the core. We document the growth path at handover.",
+      },
+      {
+        question: "Do you provide documentation and as-built drawings?",
+        answer:
+          "Yes. Handover includes the dial plan, port schedule, IP addressing, room configurations, admin credentials and a quick-reference guide for each room — the pack your IT or facilities team needs to run the system.",
+      },
+      {
+        question: "How do you train staff so adoption actually happens?",
+        answer:
+          "Short role-specific sessions during the first two weeks, laminated quick-reference cards in each room, and a named contact for questions. We also run an adoption review after go-live to catch teams still on the old tools.",
+      },
+      {
+        question: "Can you work alongside our fit-out or IT contractor?",
+        answer:
+          "Yes. We coordinate containment, power, mounting positions and network drops with the fit-out and IT contractors during the build, which is far cheaper than retrofitting cabling or power after the ceiling is closed.",
+      },
     ],
   },
   security: {
