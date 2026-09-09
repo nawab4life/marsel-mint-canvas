@@ -1349,6 +1349,56 @@ export const SOLUTIONS: Record<string, SolutionData> = {
         answer:
           "Minutes. With on-site card printing and encoding, a new joiner can leave induction with a working, correctly zoned badge.",
       },
+      {
+        question: "Can access rights follow HR joiner and leaver processes automatically?",
+        answer:
+          "Yes, where an HR or directory system is integrated. A new starter's zones are provisioned from their HR record, and a leaver's access is revoked on the last working day rather than relying on someone remembering to email facilities.",
+      },
+      {
+        question: "Which credential type should we choose — card, mobile or biometric?",
+        answer:
+          "General office doors work well on smart cards or mobile credentials; high-assurance zones such as server rooms and cash handling add biometric or dual-factor. We mix modalities per zone rather than forcing one across the whole site.",
+      },
+      {
+        question: "How many doors can a single access control system handle?",
+        answer:
+          "From a single door to several hundred across multiple buildings. The controller topology changes with scale, which is why we design the architecture and zone matrix before quoting hardware, rather than selling a fixed panel count.",
+      },
+      {
+        question: "How is visitor and contractor access managed?",
+        answer:
+          "Visitor management issues temporary credentials with limited zones and automatic expiry at end of day, while contractor induction and document-expiry checks can be layered on for sites that require it.",
+      },
+      {
+        question: "Do access control systems comply with Civil Defence fire requirements?",
+        answer:
+          "Doors on escape routes are wired fail-safe and release on fire alarm or power loss. We design the locking, power and fire-alarm interface to satisfy Civil Defence and coordinate with your fire consultant.",
+      },
+      {
+        question: "Can biometric readers cope with Dubai's outdoor heat, dust and gloves?",
+        answer:
+          "Facial and palm-vein readers handle dusty, humid and gloved conditions better than optical fingerprint. We choose the modality per location — outdoor turnstiles, clean offices and high-throughput entrances each favour different readers.",
+      },
+      {
+        question: "What happens if a card is lost or a fingerprint won't read?",
+        answer:
+          "Lost cards are revoked from the console in seconds, and we enrol multiple fingers with a card or PIN fallback so a worn print never leaves someone locked out.",
+      },
+      {
+        question: "Can the same system produce and encode ID badges in-house?",
+        answer:
+          "Yes. A single-pass workflow captures the photo, prints the badge and encodes the access credential, so a new joiner leaves induction with a working, correctly zoned card rather than a temporary one.",
+      },
+      {
+        question: "What reporting does access control provide for audits?",
+        answer:
+          "Audit trails record every badge event by door, user and time, plus anti-passback violations and forced-door alarms. Reports can be scheduled for HR, facilities and security reviews.",
+      },
+      {
+        question: "What warranty and support applies to ID systems?",
+        answer:
+          "Manufacturer warranty covers readers, controllers and printers, with claims handled on your behalf. Our maintenance contract adds remote monitoring, preventive visits, consumables supply and defined response times.",
+      },
     ],
   },
   it: {
@@ -1373,6 +1423,56 @@ export const SOLUTIONS: Record<string, SolutionData> = {
         answer:
           "Every link is certified and tested, with results and as-built documentation issued at handover.",
       },
+      {
+        question: "Cat6 or Cat6A — which should we install for a new fit-out?",
+        answer:
+          "Cat6 is adequate for most office desks today. Cat6A is worth the extra for Wi-Fi 6E/7 access points and any run expected to carry multi-gigabit within the next decade, because rewiring a closed ceiling later is far more expensive.",
+      },
+      {
+        question: "Should we keep servers on-premise or move to the cloud?",
+        answer:
+          "It depends on the workload. Cloud wins on flexibility and small footprints; on-premise often wins on cost for steady heavy workloads and where UAE data residency is required. We compare both over a five-year horizon and recommend the split, not a default.",
+      },
+      {
+        question: "How do you size a server or storage deployment correctly?",
+        answer:
+          "We start from the workload — user counts, database size, virtual machine footprint and growth over the refresh cycle — which produces a spec you can defend rather than an oversized box bought to be safe.",
+      },
+      {
+        question: "What backup and disaster recovery approach do you recommend?",
+        answer:
+          "We design around two numbers — how much data you can afford to lose (RPO) and how long you can be down (RTO) — then build layered backup across local, off-site and cloud copies, with ransomware-resistant immutable storage and scheduled restore tests.",
+      },
+      {
+        question: "Isn't Microsoft 365 already backed up?",
+        answer:
+          "Microsoft protects the platform, not your content decisions. Deleted or maliciously altered data beyond the retention window is gone, which is why we add a dedicated Microsoft 365 backup alongside the platform.",
+      },
+      {
+        question: "What IT security basics should a small business start with?",
+        answer:
+          "Multi-factor authentication, tested backups and patched endpoints. Those three prevent or survive the large majority of incidents we see. We then add firewall hardening, email filtering and network segmentation.",
+      },
+      {
+        question: "How do you secure IoT, CCTV and guest devices on the network?",
+        answer:
+          "Through VLAN segmentation so cameras, IoT and guest Wi-Fi cannot reach your file servers or payment systems. A compromised camera on its own VLAN cannot pivot into the corporate network, which is why we never place everything on one flat LAN.",
+      },
+      {
+        question: "What SLAs do your managed IT contracts include?",
+        answer:
+          "Standard contracts target one-hour remote response for critical issues and next-business-day on-site attendance in Dubai, with faster tiers available. Pricing is usually a fixed monthly fee per user or device, which keeps budgeting predictable.",
+      },
+      {
+        question: "Can data stay within the UAE for residency reasons?",
+        answer:
+          "Yes. Where residency is required we select regions and providers that keep data in-country and document the arrangement so your compliance and legal teams can verify it.",
+      },
+      {
+        question: "Do you provide as-built documentation and port schedules?",
+        answer:
+          "Yes. Every outlet is labelled to match an as-built drawing and port schedule, racks are dressed for airflow and future changes, and Fluke test results are issued with the handover pack — the documentation your IT team needs to run the environment.",
+      },
     ],
   },
   av: {
@@ -1384,17 +1484,67 @@ export const SOLUTIONS: Record<string, SolutionData> = {
       {
         question: "Can you work with our interior fit-out contractor?",
         answer:
-          "Yes. We prefer to be involved during fit-out so containment, power and mounting positions are right the first time.",
+          "Yes. We prefer to be involved during fit-out so containment, power and mounting positions are right the first time, which is far cheaper than retrofitting floor boxes or ceiling mounts after the fit-out is complete.",
       },
       {
         question: "Do you supply commercial-grade displays only?",
         answer:
-          "For anything running long hours we do. Consumer panels are not warranted for commercial duty cycles and fail early.",
+          "For anything running long hours we do. Consumer panels are not warranted for commercial duty cycles and fail early, and they lack the brightness for sunlit lobbies — commercial displays are rated for that use and covered by warranty.",
       },
       {
         question: "Do you provide training for staff?",
         answer:
-          "Yes, plus laminated quick-reference guides in the room and remote support for the first weeks after handover.",
+          "Yes, plus laminated quick-reference guides in the room and remote support for the first weeks after handover so staff are never stuck in front of a control panel.",
+      },
+      {
+        question: "How do you choose the right display size for a boardroom?",
+        answer:
+          "From the furthest seat. Rule of thumb: the furthest viewer should be no more than four to six times the display height away. A 20-seat boardroom typically needs 85 inches or dual displays, which we confirm against the floor plan.",
+      },
+      {
+        question: "Ceiling microphones or table microphones — which is better?",
+        answer:
+          "Ceiling arrays keep the table clean and suit fixed layouts; table microphones give better rejection in noisy or high-ceilinged rooms. We choose after listening to the room and reviewing the ceiling height and glass surfaces, which is what stops a well-specified system sounding hollow.",
+      },
+      {
+        question: "Can AV and video conferencing be combined in one room system?",
+        answer:
+          "Yes — most boardrooms are specified as a single AV and conferencing system so the same ceiling microphones, speakers and displays serve in-room and remote participants through one control panel.",
+      },
+      {
+        question: "What control system should we use — touch panel or simple keypad?",
+        answer:
+          "It depends on room complexity. A boardroom with shades, lighting, multiple sources and conferencing benefits from a touch panel with presets; a huddle room needs only a simple keypad for source and volume. We standardise so staff see the same control in every room.",
+      },
+      {
+        question: "Can you integrate PA and emergency broadcast with the fire alarm?",
+        answer:
+          "Yes, with priority routing that mutes music instantly for a page or alarm. Life-safety zones require certified equipment, monitored circuits and battery backup, and we design to Civil Defence requirements where applicable.",
+      },
+      {
+        question: "Why do PA announcements often sound unclear in a building?",
+        answer:
+          "Usually too few speakers driven too loud in a reverberant space. More speakers at lower volume almost always fixes speech intelligibility — coverage is a design outcome we calculate, not a product feature.",
+      },
+      {
+        question: "Who updates digital signage content — us or you?",
+        answer:
+          "Your team can, from a browser. We set up templates, permissions and scheduling during handover so daily updates take a minute. We can also manage content under a service agreement if you prefer to outsource it.",
+      },
+      {
+        question: "Can hospitality AV integrate with our property management system?",
+        answer:
+          "Yes. Common PMS platforms are supported so guest name, language and folio follow check-in, and welcome screens and casting are personalised per room with secure pairing so guests cannot cast into a neighbouring room.",
+      },
+      {
+        question: "What power and network does a meeting-room AV system need?",
+        answer:
+          "We plan the floor boxes, ceiling mounts, PoE for cameras and network drops during fit-out so the room has power and data where the equipment actually sits, with cable management that keeps the table and ceiling clean.",
+      },
+      {
+        question: "What warranty and support applies to AV systems?",
+        answer:
+          "Manufacturer warranty covers displays, processors and audio hardware, with claims handled on your behalf. Our maintenance contract adds remote support, firmware updates, preventive visits and a named contact for the first weeks after go-live.",
       },
     ],
     subServices: avSubServices,
