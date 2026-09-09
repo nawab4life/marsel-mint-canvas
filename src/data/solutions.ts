@@ -1349,6 +1349,56 @@ export const SOLUTIONS: Record<string, SolutionData> = {
         answer:
           "Minutes. With on-site card printing and encoding, a new joiner can leave induction with a working, correctly zoned badge.",
       },
+      {
+        question: "Can access rights follow HR joiner and leaver processes automatically?",
+        answer:
+          "Yes, where an HR or directory system is integrated. A new starter's zones are provisioned from their HR record, and a leaver's access is revoked on the last working day rather than relying on someone remembering to email facilities.",
+      },
+      {
+        question: "Which credential type should we choose — card, mobile or biometric?",
+        answer:
+          "General office doors work well on smart cards or mobile credentials; high-assurance zones such as server rooms and cash handling add biometric or dual-factor. We mix modalities per zone rather than forcing one across the whole site.",
+      },
+      {
+        question: "How many doors can a single access control system handle?",
+        answer:
+          "From a single door to several hundred across multiple buildings. The controller topology changes with scale, which is why we design the architecture and zone matrix before quoting hardware, rather than selling a fixed panel count.",
+      },
+      {
+        question: "How is visitor and contractor access managed?",
+        answer:
+          "Visitor management issues temporary credentials with limited zones and automatic expiry at end of day, while contractor induction and document-expiry checks can be layered on for sites that require it.",
+      },
+      {
+        question: "Do access control systems comply with Civil Defence fire requirements?",
+        answer:
+          "Doors on escape routes are wired fail-safe and release on fire alarm or power loss. We design the locking, power and fire-alarm interface to satisfy Civil Defence and coordinate with your fire consultant.",
+      },
+      {
+        question: "Can biometric readers cope with Dubai's outdoor heat, dust and gloves?",
+        answer:
+          "Facial and palm-vein readers handle dusty, humid and gloved conditions better than optical fingerprint. We choose the modality per location — outdoor turnstiles, clean offices and high-throughput entrances each favour different readers.",
+      },
+      {
+        question: "What happens if a card is lost or a fingerprint won't read?",
+        answer:
+          "Lost cards are revoked from the console in seconds, and we enrol multiple fingers with a card or PIN fallback so a worn print never leaves someone locked out.",
+      },
+      {
+        question: "Can the same system produce and encode ID badges in-house?",
+        answer:
+          "Yes. A single-pass workflow captures the photo, prints the badge and encodes the access credential, so a new joiner leaves induction with a working, correctly zoned card rather than a temporary one.",
+      },
+      {
+        question: "What reporting does access control provide for audits?",
+        answer:
+          "Audit trails record every badge event by door, user and time, plus anti-passback violations and forced-door alarms. Reports can be scheduled for HR, facilities and security reviews.",
+      },
+      {
+        question: "What warranty and support applies to ID systems?",
+        answer:
+          "Manufacturer warranty covers readers, controllers and printers, with claims handled on your behalf. Our maintenance contract adds remote monitoring, preventive visits, consumables supply and defined response times.",
+      },
     ],
   },
   it: {
