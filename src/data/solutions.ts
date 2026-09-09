@@ -1423,6 +1423,56 @@ export const SOLUTIONS: Record<string, SolutionData> = {
         answer:
           "Every link is certified and tested, with results and as-built documentation issued at handover.",
       },
+      {
+        question: "Cat6 or Cat6A — which should we install for a new fit-out?",
+        answer:
+          "Cat6 is adequate for most office desks today. Cat6A is worth the extra for Wi-Fi 6E/7 access points and any run expected to carry multi-gigabit within the next decade, because rewiring a closed ceiling later is far more expensive.",
+      },
+      {
+        question: "Should we keep servers on-premise or move to the cloud?",
+        answer:
+          "It depends on the workload. Cloud wins on flexibility and small footprints; on-premise often wins on cost for steady heavy workloads and where UAE data residency is required. We compare both over a five-year horizon and recommend the split, not a default.",
+      },
+      {
+        question: "How do you size a server or storage deployment correctly?",
+        answer:
+          "We start from the workload — user counts, database size, virtual machine footprint and growth over the refresh cycle — which produces a spec you can defend rather than an oversized box bought to be safe.",
+      },
+      {
+        question: "What backup and disaster recovery approach do you recommend?",
+        answer:
+          "We design around two numbers — how much data you can afford to lose (RPO) and how long you can be down (RTO) — then build layered backup across local, off-site and cloud copies, with ransomware-resistant immutable storage and scheduled restore tests.",
+      },
+      {
+        question: "Isn't Microsoft 365 already backed up?",
+        answer:
+          "Microsoft protects the platform, not your content decisions. Deleted or maliciously altered data beyond the retention window is gone, which is why we add a dedicated Microsoft 365 backup alongside the platform.",
+      },
+      {
+        question: "What IT security basics should a small business start with?",
+        answer:
+          "Multi-factor authentication, tested backups and patched endpoints. Those three prevent or survive the large majority of incidents we see. We then add firewall hardening, email filtering and network segmentation.",
+      },
+      {
+        question: "How do you secure IoT, CCTV and guest devices on the network?",
+        answer:
+          "Through VLAN segmentation so cameras, IoT and guest Wi-Fi cannot reach your file servers or payment systems. A compromised camera on its own VLAN cannot pivot into the corporate network, which is why we never place everything on one flat LAN.",
+      },
+      {
+        question: "What SLAs do your managed IT contracts include?",
+        answer:
+          "Standard contracts target one-hour remote response for critical issues and next-business-day on-site attendance in Dubai, with faster tiers available. Pricing is usually a fixed monthly fee per user or device, which keeps budgeting predictable.",
+      },
+      {
+        question: "Can data stay within the UAE for residency reasons?",
+        answer:
+          "Yes. Where residency is required we select regions and providers that keep data in-country and document the arrangement so your compliance and legal teams can verify it.",
+      },
+      {
+        question: "Do you provide as-built documentation and port schedules?",
+        answer:
+          "Yes. Every outlet is labelled to match an as-built drawing and port schedule, racks are dressed for airflow and future changes, and Fluke test results are issued with the handover pack — the documentation your IT team needs to run the environment.",
+      },
     ],
   },
   av: {
