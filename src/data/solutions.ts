@@ -1484,17 +1484,67 @@ export const SOLUTIONS: Record<string, SolutionData> = {
       {
         question: "Can you work with our interior fit-out contractor?",
         answer:
-          "Yes. We prefer to be involved during fit-out so containment, power and mounting positions are right the first time.",
+          "Yes. We prefer to be involved during fit-out so containment, power and mounting positions are right the first time, which is far cheaper than retrofitting floor boxes or ceiling mounts after the fit-out is complete.",
       },
       {
         question: "Do you supply commercial-grade displays only?",
         answer:
-          "For anything running long hours we do. Consumer panels are not warranted for commercial duty cycles and fail early.",
+          "For anything running long hours we do. Consumer panels are not warranted for commercial duty cycles and fail early, and they lack the brightness for sunlit lobbies — commercial displays are rated for that use and covered by warranty.",
       },
       {
         question: "Do you provide training for staff?",
         answer:
-          "Yes, plus laminated quick-reference guides in the room and remote support for the first weeks after handover.",
+          "Yes, plus laminated quick-reference guides in the room and remote support for the first weeks after handover so staff are never stuck in front of a control panel.",
+      },
+      {
+        question: "How do you choose the right display size for a boardroom?",
+        answer:
+          "From the furthest seat. Rule of thumb: the furthest viewer should be no more than four to six times the display height away. A 20-seat boardroom typically needs 85 inches or dual displays, which we confirm against the floor plan.",
+      },
+      {
+        question: "Ceiling microphones or table microphones — which is better?",
+        answer:
+          "Ceiling arrays keep the table clean and suit fixed layouts; table microphones give better rejection in noisy or high-ceilinged rooms. We choose after listening to the room and reviewing the ceiling height and glass surfaces, which is what stops a well-specified system sounding hollow.",
+      },
+      {
+        question: "Can AV and video conferencing be combined in one room system?",
+        answer:
+          "Yes — most boardrooms are specified as a single AV and conferencing system so the same ceiling microphones, speakers and displays serve in-room and remote participants through one control panel.",
+      },
+      {
+        question: "What control system should we use — touch panel or simple keypad?",
+        answer:
+          "It depends on room complexity. A boardroom with shades, lighting, multiple sources and conferencing benefits from a touch panel with presets; a huddle room needs only a simple keypad for source and volume. We standardise so staff see the same control in every room.",
+      },
+      {
+        question: "Can you integrate PA and emergency broadcast with the fire alarm?",
+        answer:
+          "Yes, with priority routing that mutes music instantly for a page or alarm. Life-safety zones require certified equipment, monitored circuits and battery backup, and we design to Civil Defence requirements where applicable.",
+      },
+      {
+        question: "Why do PA announcements often sound unclear in a building?",
+        answer:
+          "Usually too few speakers driven too loud in a reverberant space. More speakers at lower volume almost always fixes speech intelligibility — coverage is a design outcome we calculate, not a product feature.",
+      },
+      {
+        question: "Who updates digital signage content — us or you?",
+        answer:
+          "Your team can, from a browser. We set up templates, permissions and scheduling during handover so daily updates take a minute. We can also manage content under a service agreement if you prefer to outsource it.",
+      },
+      {
+        question: "Can hospitality AV integrate with our property management system?",
+        answer:
+          "Yes. Common PMS platforms are supported so guest name, language and folio follow check-in, and welcome screens and casting are personalised per room with secure pairing so guests cannot cast into a neighbouring room.",
+      },
+      {
+        question: "What power and network does a meeting-room AV system need?",
+        answer:
+          "We plan the floor boxes, ceiling mounts, PoE for cameras and network drops during fit-out so the room has power and data where the equipment actually sits, with cable management that keeps the table and ceiling clean.",
+      },
+      {
+        question: "What warranty and support applies to AV systems?",
+        answer:
+          "Manufacturer warranty covers displays, processors and audio hardware, with claims handled on your behalf. Our maintenance contract adds remote support, firmware updates, preventive visits and a named contact for the first weeks after go-live.",
       },
     ],
     subServices: avSubServices,
