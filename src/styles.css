@@ -3211,3 +3211,102 @@ h3 {
     font-size: 35px;
   }
 }
+
+/* Direct contact actions stay below navigation overlays. */
+.floating-contact {
+  position: fixed;
+  right: max(22px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.floating-contact-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid #ffffff45;
+  box-shadow: 0 5px 20px #14201924;
+}
+.floating-whatsapp {
+  background: #477713;
+  color: #fff;
+}
+.floating-email {
+  background: var(--ink);
+  color: var(--lime);
+}
+.floating-contact-label {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: white;
+  font-size: 11px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  box-shadow: 0 3px 14px #0002;
+}
+.floating-contact-button:hover .floating-contact-label,
+.floating-contact-button:focus-visible .floating-contact-label {
+  opacity: 1;
+  visibility: visible;
+}
+.floating-contact-button:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 4px;
+}
+.floating-whatsapp:hover {
+  background: #365f0c;
+}
+.floating-email:hover {
+  background: #30432b;
+}
+.site-footer {
+  padding-bottom: max(90px, calc(env(safe-area-inset-bottom) + 75px));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .floating-contact-button {
+    transition:
+      background-color 0.2s,
+      box-shadow 0.2s,
+      transform 0.2s;
+  }
+  .floating-contact-label {
+    transition:
+      opacity 0.2s,
+      visibility 0.2s;
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .floating-contact-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px #14201935;
+  }
+}
+@media (max-width: 700px) {
+  .floating-contact {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+  .floating-contact-button {
+    width: 46px;
+    height: 46px;
+  }
+}
+@media print {
+  .floating-contact,
+  .motion-toggle {
+    display: none;
+  }
+}

@@ -8,6 +8,7 @@ export const siteContact = {
   email: "sales@marseltech.com",
   phone: "+971 50 692 8507",
   phoneHref: "tel:+971506928507",
+  whatsappNumber: "971506928507",
   location: "Dubai, United Arab Emirates",
 };
 export const serviceAreas = [

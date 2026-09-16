@@ -39,3 +39,7 @@ Inner solution pages now use five distinct isometric illustrations: a collaborat
 The supplied sales email and +971 50 692 8507 telephone number are centralised in siteContact. Click-to-call links appear on the contact page, in the footer and in project contact bands. Email drafts use the new address. Subtle, once-per-page-entry scroll reveals and hover transitions complement the existing palette. Reduced-motion preferences are honoured, including live preference changes; content stays visible without JavaScript or animation support.
 
 Motion is now more visible: staggered hero entrance, floating workplace scenes, pulsing active hotspots and keyed solution transitions. A persistent pause/resume control stops CSS and scripted motion. Scroll observers also cover late-mounted route content. Dynamic-content, pause/resume, cancellation and reduced-motion checks pass.
+
+## Floating contact buttons
+
+WhatsApp and Email links are available at the bottom-right on every page. WhatsApp opens a prefilled draft to the confirmed number 971506928507; email opens a project enquiry draft to sales@marseltech.com. Neither sends a message automatically. Buttons have accessible names, keyboard focus styles, hover/focus labels, safe-area offsets and reduced-motion support.
