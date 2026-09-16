@@ -100,6 +100,13 @@ export function Header() {
             Our approach
           </Link>
           <Link
+            to="/partners"
+            aria-current={pathname === "/partners" ? "page" : undefined}
+            className="nav-link"
+          >
+            Partners
+          </Link>
+          <Link
             to="/contact"
             aria-current={pathname === "/contact" ? "page" : undefined}
             className="nav-link"

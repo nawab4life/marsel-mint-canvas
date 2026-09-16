@@ -55,7 +55,7 @@ export function SiteMotion() {
         const register = () =>
           document
             .querySelectorAll(
-              "main .hero-copy, main .hero-visual, main .page-hero-copy, main .page-hero-image, main .section-top, main .approach-photo, main .approach-copy, main .application-card, main .directory-entry, main .capability-list > div, main .delivery-list > div, main .workplace-model, main .workplace-panel, main .contact-copy, main .contact-form-panel, main .contact-band-inner",
+              "main .partner-card, main .partner-logo-tile, main .partners-intro, main .hero-copy, main .hero-visual, main .page-hero-copy, main .page-hero-image, main .section-top, main .approach-photo, main .approach-copy, main .application-card, main .directory-entry, main .capability-list > div, main .delivery-list > div, main .workplace-model, main .workplace-panel, main .contact-copy, main .contact-form-panel, main .contact-band-inner",
             )
             .forEach((element) => {
               if (!seen.has(element)) {

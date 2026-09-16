@@ -23,6 +23,7 @@ export function Footer() {
             <Link to="/">Home</Link>
             <Link to="/solutions">Our solutions</Link>
             <Link to="/how-we-work">Our approach</Link>
+            <Link to="/partners">Partners</Link>
             <Link to="/contact">Contact</Link>
           </div>
           <div>

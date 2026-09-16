@@ -1,13 +1,37 @@
-import { partnerLogos } from "@/data/site";
+import { Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
+import { partnerLogos } from "@/data/partners";
 export function PartnersStrip() {
-  if (!partnerLogos.length) return null;
   return (
-    <section className="partner-strip" aria-label="Technology partners">
+    <section className="partners-home" aria-label="Technology partners">
       <div className="shell">
-        <p className="eyebrow">OUR TECHNOLOGY PARTNERS</p>
-        <div className="partner-logos">
+        <div className="partners-home-heading">
+          <div>
+            <p className="eyebrow">OUR TECHNOLOGY PARTNERS</p>
+            <h2>Good technology. Connected with purpose.</h2>
+          </div>
+          <Link to="/partners" className="text-link">
+            Meet our partners <ArrowUpRight size={17} />
+          </Link>
+        </div>
+        <div className="partners-logo-grid">
           {partnerLogos.map((p) => (
-            <img key={p.name} src={p.src} alt={p.name} width={180} height={80} loading="lazy" />
+            <Link
+              key={p.slug}
+              to="/partners"
+              hash={p.slug}
+              className="partner-logo-tile"
+              aria-label={`Learn about ${p.name}`}
+            >
+              <img
+                src={p.src}
+                alt={p.name}
+                style={{ width: p.width }}
+                width={p.width}
+                height={72}
+                loading="lazy"
+              />
+            </Link>
           ))}
         </div>
       </div>

@@ -77,8 +77,7 @@ export const serviceAreas = [
     to: "/solutions/av",
   },
 ] as const;
-// Populate with approved logo files supplied by the business. Empty = hidden.
-export const partnerLogos: { name: string; src: string }[] = [];
+export { partnerLogos } from "./partners";
 export const deliverySteps = [
   {
     title: "Understand",
