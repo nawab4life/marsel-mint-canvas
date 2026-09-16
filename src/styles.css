@@ -2817,3 +2817,118 @@ h3 {
     box-shadow: 0 6px 16px #18241a12;
   }
 }
+
+/* Clearly visible, restrained motion with a persistent pause control. */
+.motion-toggle {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid #789660;
+  border-radius: 24px;
+  background: #18251aeb;
+  color: #edf5e4;
+  font-size: 10px;
+  box-shadow: 0 3px 16px #0002;
+}
+.motion-toggle span {
+  color: var(--lime);
+}
+.motion-toggle:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+@keyframes marsel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes marsel-drift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -9px;
+  }
+}
+@keyframes marsel-signal {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 #c3f05c50;
+  }
+  65% {
+    box-shadow: 0 0 0 13px #c3f05c00;
+  }
+}
+@keyframes marsel-image-enter {
+  from {
+    opacity: 0.25;
+    transform: scale(1.045);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > *,
+  .page-hero-copy > * {
+    animation: marsel-enter 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .hero-copy > :nth-child(2),
+  .page-hero-copy > :nth-child(2) {
+    animation-delay: 0.14s;
+  }
+  .hero-copy > :nth-child(3),
+  .page-hero-copy > :nth-child(3) {
+    animation-delay: 0.28s;
+  }
+  .hero-copy > :nth-child(4),
+  .page-hero-copy > :nth-child(4) {
+    animation-delay: 0.42s;
+  }
+  .hero-copy > :nth-child(5) {
+    animation-delay: 0.56s;
+  }
+  .hero-image-frame > img,
+  .page-hero-image > img {
+    animation: marsel-image-enter 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .hero-floating-card {
+    animation: marsel-drift 5s ease-in-out infinite;
+  }
+  .workplace-model {
+    animation: marsel-drift 6s ease-in-out infinite;
+  }
+  .hotspot-active,
+  .live-dot {
+    animation: marsel-signal 2.6s ease-out infinite;
+  }
+  .motion-swap {
+    animation: marsel-enter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .solution-feature > img.motion-swap {
+    animation-name: marsel-image-enter;
+  }
+  html[data-motion="paused"] *,
+  html[data-motion="paused"] *::before,
+  html[data-motion="paused"] *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-toggle {
+    display: none;
+  }
+}

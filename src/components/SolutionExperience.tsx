@@ -300,8 +300,12 @@ export function SolutionExperience({ solution }: { solution: SolutionKind }) {
             <span className="system-code">
               <service.icon size={19} /> {service.code} / {String(selected + 1).padStart(2, "0")}
             </span>
-            <h3>{point.title}</h3>
-            <p>{point.description}</p>
+            <h3 key={selected} className="motion-swap">
+              {point.title}
+            </h3>
+            <p key={`${selected}-description`} className="motion-swap">
+              {point.description}
+            </p>
             <ul>
               {point.details.map((d) => (
                 <li key={d}>{d}</li>

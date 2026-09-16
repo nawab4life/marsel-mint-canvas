@@ -254,8 +254,12 @@ export function ConnectedWorkplace({
               <service.icon size={19} /> {service.code} /{" "}
               {String(zones.indexOf(active) + 1).padStart(2, "0")}
             </span>
-            <h3>{active.label}</h3>
-            <p>{active.description}</p>
+            <h3 key={active.slug} className="motion-swap">
+              {active.label}
+            </h3>
+            <p key={`${active.slug}-description`} className="motion-swap">
+              {active.description}
+            </p>
             <ul>
               {active.details.map((d) => (
                 <li key={d}>{d}</li>

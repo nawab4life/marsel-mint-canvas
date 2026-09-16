@@ -41,3 +41,5 @@ Inner solution pages now use five distinct isometric illustrations: a collaborat
 ## Contact and motion update
 
 The supplied sales email and +971 50 692 8507 telephone number are centralised in siteContact. Click-to-call links appear on the contact page, in the footer and in project contact bands. Email drafts use the new address. Subtle, once-per-page-entry scroll reveals and hover transitions complement the existing palette. Reduced-motion preferences are honoured, including live preference changes; content stays visible without JavaScript or animation support.
+
+Motion is now more visible: staggered hero entrance, floating workplace scenes, pulsing active hotspots and keyed solution transitions. A persistent pause/resume control stops CSS and scripted motion. Scroll observers also cover late-mounted route content. Dynamic-content, pause/resume, cancellation and reduced-motion checks pass.

@@ -43,8 +43,16 @@ export function SolutionsExplorer() {
             </Link>
           </div>
           <div className="solution-feature" id={panelId} aria-live="polite">
-            <img src={service.image} alt={service.alt} width={1100} height={700} loading="lazy" />
-            <div className="solution-feature-copy">
+            <img
+              key={service.slug}
+              className="motion-swap"
+              src={service.image}
+              alt={service.alt}
+              width={1100}
+              height={700}
+              loading="lazy"
+            />
+            <div key={service.slug} className="solution-feature-copy motion-swap">
               <span className="eyebrow">{service.code} SOLUTIONS</span>
               <h3>{service.headline}</h3>
               <p>{service.description}</p>
