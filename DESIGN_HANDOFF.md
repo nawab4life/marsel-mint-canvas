@@ -22,7 +22,7 @@ Only the images display; names are alternative text. No text substitutes or inve
 
 ## Contact
 
-The placeholder telephone number, unfinished map message, unconfirmed opening hours and dead privacy/terms links have been removed. The existing business email remains `info@marseltech.ae`.
+The placeholder telephone number, unfinished map message, unconfirmed opening hours and dead privacy/terms links have been removed. The existing business email remains `sales@marseltech.com`.
 
 The enquiry form validates the user's details, creates an encoded email draft and lets the user open their email app or copy the draft. It never claims an enquiry was received or sent. Direct server delivery needs an approved mail service and configuration; no credentials or new third-party service were invented or provisioned.
 
@@ -37,3 +37,7 @@ Verified during implementation: production build, TypeScript, lint on modified c
 ## Solution-specific explorers
 
 Inner solution pages now use five distinct isometric illustrations: a collaboration room (UCC), surveillance system (Security), access-controlled entrance (ID), network infrastructure (IT), and presentation space (AV). Each has five solution-specific component selectors, numbered hotspots, equipment highlighting and explanatory content. The homepage workplace explorer remains unchanged. SVG illustrations use a shared projection and preserve the existing responsive explorer layout. All 25 hotspot interactions, paired selectors and distinct descriptions were checked.
+
+## Contact and motion update
+
+The supplied sales email and +971 50 692 8507 telephone number are centralised in siteContact. Click-to-call links appear on the contact page, in the footer and in project contact bands. Email drafts use the new address. Subtle, once-per-page-entry scroll reveals and hover transitions complement the existing palette. Reduced-motion preferences are honoured, including live preference changes; content stays visible without JavaScript or animation support.

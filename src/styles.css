@@ -2741,3 +2741,79 @@ h3 {
     margin-left: 0;
   }
 }
+
+.contact-direct.contact-phone {
+  margin-top: 24px;
+  padding-top: 24px;
+}
+.footer-grid .footer-connect > a.footer-phone {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 0;
+  margin-top: 22px;
+  gap: 10px;
+}
+.contact-band-phone {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.contact-band-phone:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .action,
+  .round-link {
+    transition:
+      background-color 0.25s,
+      color 0.25s,
+      transform 0.25s,
+      box-shadow 0.25s;
+  }
+  .text-link > svg,
+  .action > svg,
+  .round-link > svg {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .text-link:hover > svg,
+  .text-link:focus-visible > svg,
+  .action:hover > svg,
+  .action:focus-visible > svg {
+    transform: translate(3px, -3px);
+  }
+  .round-link:hover > svg,
+  .round-link:focus-visible > svg {
+    transform: translate(4px, -4px);
+  }
+  .workplace-model polygon,
+  .workplace-model path,
+  .workplace-model circle,
+  .workplace-model ellipse {
+    transition:
+      fill 0.35s ease,
+      stroke 0.35s ease,
+      opacity 0.35s ease;
+  }
+  .system-selector button {
+    transition:
+      color 0.25s,
+      border-color 0.25s;
+  }
+  .hotspot {
+    transition:
+      background-color 0.25s,
+      color 0.25s,
+      box-shadow 0.35s;
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px #18241a12;
+  }
+}

@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/Header";
+import { SiteMotion } from "../components/SiteMotion";
 import { Footer } from "../components/Footer";
 
 function NotFoundComponent() {
@@ -138,6 +139,7 @@ function RootComponent() {
           Skip to content
         </a>
         <Header />
+        <SiteMotion />
         <main id="main-content" className="flex-1">
           <Outlet />
         </main>

@@ -4,7 +4,12 @@ import securityImage from "@/assets/banner-security.jpg";
 import idImage from "@/assets/banner-id.jpg";
 import itImage from "@/assets/banner-it.jpg";
 import avImage from "@/assets/banner-av.jpg";
-export const siteContact = { email: "info@marseltech.ae", location: "Dubai, United Arab Emirates" };
+export const siteContact = {
+  email: "sales@marseltech.com",
+  phone: "+971 50 692 8507",
+  phoneHref: "tel:+971506928507",
+  location: "Dubai, United Arab Emirates",
+};
 export const serviceAreas = [
   {
     slug: "ucc",
