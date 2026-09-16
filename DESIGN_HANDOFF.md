@@ -33,3 +33,7 @@ The final telephone number, physical office location, approved partner logos, re
 Run `npm run build` and `npx tsc --noEmit`. The repository remains compatible with the existing Lovable Vite/TanStack setup. Published history must not be rewritten. The local review browser blocked loopback and file URLs, so screenshot-based visual review was not available in this environment.
 
 Verified during implementation: production build, TypeScript, lint on modified components, all nine rendered page routes, preserved logo bytes, email encoding and draft editing, partner-logo visibility, FAQ expansion, service selection, workplace hotspots, keyboard Escape dismissal and mobile-menu closure after navigation. Desktop/mobile screenshot review remains outstanding because of the browser restriction above.
+
+## Solution-specific explorers
+
+Inner solution pages now use five distinct isometric illustrations: a collaboration room (UCC), surveillance system (Security), access-controlled entrance (ID), network infrastructure (IT), and presentation space (AV). Each has five solution-specific component selectors, numbered hotspots, equipment highlighting and explanatory content. The homepage workplace explorer remains unchanged. SVG illustrations use a shared projection and preserve the existing responsive explorer layout. All 25 hotspot interactions, paired selectors and distinct descriptions were checked.
