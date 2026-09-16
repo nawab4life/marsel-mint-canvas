@@ -42,12 +42,6 @@ export const Route = createFileRoute("/solutions/id")({
   component: IDPage,
 });
 
-const outcomes = [
-  { value: "1", label: "One credential for doors, attendance and visitor flow" },
-  { value: "5", label: "Core capabilities delivered as one identity system" },
-  { value: "360°", label: "Survey, design, install, train and support" },
-];
-
 const scope = [
   "Door schedule, zoning and access policy workshop",
   "Controllers, readers and credential technology selection",
@@ -63,13 +57,12 @@ function IDPage() {
   return (
     <SolutionDetailPage
       title="ID Solutions"
-      heroTitle="ID & Access Solutions in Dubai"
+      heroTitle="The right access. Made simple."
       heroDescription="Control who goes where, when and for how long — without adding friction to the working day."
       image={solution.image}
       imageAlt={solution.imageAlt}
       intro="Identity systems decide who enters, what they can reach and how that is recorded. We design access control, attendance, visitor management and credential issuance as one policy-driven platform for offices, campuses and facilities across Dubai and the UAE."
-      outcomes={outcomes}
-      capabilitiesTitle="Five identity capabilities, delivered as one system"
+      capabilitiesTitle="A connected approach to identity."
       capabilitiesDescription="Each capability is designed, installed and supported end to end, then unified under a single credential and policy set."
       subServices={solution.subServices}
       scopeTitle="What a typical ID engagement covers"

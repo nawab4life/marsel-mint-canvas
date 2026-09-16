@@ -42,12 +42,6 @@ export const Route = createFileRoute("/solutions/security")({
   component: SecurityPage,
 });
 
-const outcomes = [
-  { value: "24/7", label: "Coverage designed around real site risk, not camera counts" },
-  { value: "6", label: "Core capabilities delivered as one security system" },
-  { value: "360°", label: "Survey, design, install, train and support" },
-];
-
 const scope = [
   "Site risk survey with camera positions and coverage mapping",
   "IP camera, NVR and storage sizing for required retention",
@@ -63,13 +57,12 @@ function SecurityPage() {
   return (
     <SolutionDetailPage
       title="Security Solutions"
-      heroTitle="Security Systems in Dubai"
+      heroTitle="Confidence in every corner."
       heroDescription="Surveillance, access, alarms and monitoring — engineered around how your site actually works."
       image={solution.image}
       imageAlt={solution.imageAlt}
       intro="We design security systems that match real site risks — from single retail units to multi-zone corporate buildings. Cameras, access, alarms and intercom are planned together so your team monitors one coherent system instead of four disconnected ones."
-      outcomes={outcomes}
-      capabilitiesTitle="Six security capabilities, delivered as one system"
+      capabilitiesTitle="See more. Protect what matters."
       capabilitiesDescription="Each capability is surveyed, installed and supported end to end, then integrated into a single monitoring environment."
       subServices={solution.subServices}
       scopeTitle="What a typical security engagement covers"

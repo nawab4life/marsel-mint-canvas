@@ -1,111 +1,68 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Video, Shield, Fingerprint, Server, Monitor, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { SectionHeading } from "@/components/SectionHeading";
-import { PageHero } from "@/components/PageHero";
-import heroSolutions from "@/assets/hero-solutions.jpg";
-import imgUcc from "@/assets/hero-ucc.jpg";
-import imgSecurity from "@/assets/hero-security.jpg";
-import imgId from "@/assets/hero-id.jpg";
-import imgIt from "@/assets/hero-it.jpg";
-import imgAv from "@/assets/hero-av.jpg";
-import { SolutionCard } from "@/components/SolutionCard";
-
+import { ArrowUpRight } from "lucide-react";
+import { ContactBand } from "@/components/ContactBand";
+import { serviceAreas } from "@/data/site";
 export const Route = createFileRoute("/solutions/")({
   head: () => ({
     meta: [
-      { title: "Solutions — MarselTech" },
-      { name: "description", content: "Explore MarselTech's solutions: UCC, Security, ID, IT and AV systems for Dubai businesses." },
-      { property: "og:title", content: "Solutions — MarselTech" },
-      { property: "og:description", content: "Explore MarselTech's solutions: UCC, Security, ID, IT and AV systems for Dubai businesses." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Technology Solutions in Dubai — Marsel Tech" },
+      {
+        name: "description",
+        content:
+          "Explore communication, security, access control, IT and audio visual solutions designed and installed by Marsel Tech in Dubai.",
+      },
     ],
   }),
   component: SolutionsPage,
 });
-
-const solutions = [
-  {
-    to: "/solutions/ucc",
-    image: imgUcc,
-    title: "UCC Solutions",
-    description: "Video conferencing, VoIP & collaboration systems for modern offices. We design around how your teams actually meet and communicate.",
-    icon: Video,
-  },
-  {
-    to: "/solutions/security",
-    image: imgSecurity,
-    title: "Security Solutions",
-    description: "CCTV, surveillance & intrusion systems built on Axis, CP Plus & Honeywell. Coverage designed for your site layout and risk profile.",
-    icon: Shield,
-  },
-  {
-    to: "/solutions/id",
-    image: imgId,
-    title: "ID Solutions",
-    description: "Access control, biometric & time-attendance systems powered by HID. Identity management that fits your workforce and policies.",
-    icon: Fingerprint,
-  },
-  {
-    to: "/solutions/it",
-    image: imgIt,
-    title: "IT Solutions",
-    description: "Network infrastructure, servers & managed IT support. Reliable foundations for the applications your business depends on.",
-    icon: Server,
-  },
-  {
-    to: "/solutions/av",
-    image: imgAv,
-    title: "AV Solutions",
-    description: "Meeting rooms, digital signage & audio systems for corporate and hospitality spaces. Clear sound and image where it matters.",
-    icon: Monitor,
-  },
-];
-
 function SolutionsPage() {
   return (
     <>
-      <PageHero
-        image={heroSolutions}
-        alt="Network switch, IP camera, access reader, IP phone and fiber cabling"
-        eager
-        size="large"
-        eyebrow="What we deliver"
-        title="Solutions"
-        description="Complete systems — designed, installed and supported."
-      />
-
-      <section className="py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="What We Deliver"
-            title="Five solution areas, one consistent delivery model"
-          />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {solutions.map((solution) => (
-              <SolutionCard key={solution.to} {...solution} />
-            ))}
+      <section className="solutions-intro">
+        <div className="shell">
+          <p className="eyebrow">OUR AREAS OF EXPERTISE</p>
+          <div>
+            <h1>
+              Five disciplines.
+              <br />
+              <span>One connected vision.</span>
+            </h1>
+            <p>
+              Technology works best when every part belongs to the same plan. Explore what we can
+              bring to your space.
+            </p>
           </div>
         </div>
       </section>
-
-      <section className="border-t border-border bg-muted/30 py-16 lg:py-24">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Not sure which solution you need?
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Book a free consultation and we'll help you identify the right technology mix for your site.
-          </p>
-          <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90">
-            <Link to="/contact">
-              Book a Consultation
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+      <section className="solution-directory">
+        <div className="shell">
+          {serviceAreas.map((s, i) => (
+            <article className="directory-entry" key={s.slug}>
+              <div className="directory-photo">
+                <img
+                  src={s.image}
+                  alt={s.alt}
+                  width={1100}
+                  height={720}
+                  loading={i === 0 ? "eager" : "lazy"}
+                />
+                <span>
+                  0{i + 1} / {s.code}
+                </span>
+              </div>
+              <div className="directory-copy">
+                <p className="eyebrow">{s.name}</p>
+                <h2>{s.headline}</h2>
+                <p>{s.description}</p>
+                <Link to={s.to} className="action action-outline">
+                  Explore {s.short.toLowerCase()} <ArrowUpRight size={18} />
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
+      <ContactBand title="One room or an entire building. Let’s find your starting point." />
     </>
   );
 }

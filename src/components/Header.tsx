@@ -1,99 +1,115 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X, Phone } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { MarselLogo } from "./MarselLogo";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-} from "@/components/ui/sheet";
-
-const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/solutions", label: "Solutions" },
-  { to: "/how-we-work", label: "How We Work" },
-  { to: "/contact", label: "Contact" },
-];
-
+import { serviceAreas } from "@/data/site";
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-
-  const isActive = (to: string) => {
-    if (to === "/") return pathname === "/";
-    return pathname === to || pathname.startsWith(`${to}/`);
-  };
-
+  const headerRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const solutionsRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    setOpen(false);
+    setSolutionsOpen(false);
+  }, [pathname]);
+  useEffect(() => {
+    function dismiss(event: PointerEvent) {
+      if (!headerRef.current?.contains(event.target as Node)) {
+        setSolutionsOpen(false);
+        setOpen(false);
+      }
+    }
+    document.addEventListener("pointerdown", dismiss);
+    return () => document.removeEventListener("pointerdown", dismiss);
+  }, []);
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center">
+    <header
+      ref={headerRef}
+      className="site-header"
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          if (solutionsOpen) {
+            setSolutionsOpen(false);
+            solutionsRef.current?.focus();
+          } else {
+            setOpen(false);
+            toggleRef.current?.focus();
+          }
+        }
+      }}
+    >
+      <div className="shell header-inner">
+        <Link to="/" aria-label="Marsel Tech home" className="logo-link">
           <MarselLogo />
         </Link>
-
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive(link.to) ? "text-primary" : "text-foreground/80"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden lg:flex items-center gap-3">
-          <a
-            href="tel:+971000000000"
-            className="flex items-center gap-1.5 text-sm text-foreground/80 hover:text-primary"
+        <button
+          ref={toggleRef}
+          className="mobile-toggle"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-expanded={open}
+          aria-controls="primary-nav"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+        <nav
+          id="primary-nav"
+          className={`primary-nav ${open ? "nav-open" : ""}`}
+          aria-label="Main navigation"
+        >
+          <Link to="/" aria-current={pathname === "/" ? "page" : undefined} className="nav-link">
+            Home
+          </Link>
+          <div
+            className="solutions-nav"
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget)) setSolutionsOpen(false);
+            }}
           >
-            <Phone className="h-4 w-4" />
-            <span>+971 00 000 0000</span>
-          </a>
-          <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <Link to="/contact">Get a Quote</Link>
-          </Button>
-        </div>
-
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon" aria-label="Open menu">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-full sm:w-80">
-            <SheetTitle className="sr-only">Navigation menu</SheetTitle>
-            <div className="flex flex-col gap-6 pt-6">
-              <Link to="/" onClick={() => setOpen(false)}>
-                <MarselLogo />
-              </Link>
-              <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setOpen(false)}
-                    className={`text-base font-medium ${
-                      isActive(link.to) ? "text-primary" : "text-foreground/80"
-                    }`}
-                  >
-                    {link.label}
+            <button
+              ref={solutionsRef}
+              className={`nav-link ${pathname.startsWith("/solutions") ? "nav-current" : ""}`}
+              aria-expanded={solutionsOpen}
+              aria-controls="solutions-menu"
+              onClick={() => setSolutionsOpen(!solutionsOpen)}
+            >
+              Solutions <ChevronDown size={14} className={solutionsOpen ? "rotate-180" : ""} />
+            </button>
+            {solutionsOpen && (
+              <div id="solutions-menu" className="solutions-menu">
+                <Link to="/solutions" className="menu-overview">
+                  Explore all solutions <ArrowUpRight size={17} />
+                </Link>
+                {serviceAreas.map((s) => (
+                  <Link key={s.slug} to={s.to}>
+                    <s.icon size={18} />
+                    <span>{s.name}</span>
+                    <ArrowUpRight size={14} />
                   </Link>
                 ))}
-              </nav>
-              <Button asChild className="mt-4 w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link to="/contact" onClick={() => setOpen(false)}>
-                  Get a Quote
-                </Link>
-              </Button>
-            </div>
-          </SheetContent>
-        </Sheet>
+              </div>
+            )}
+          </div>
+          <Link
+            to="/how-we-work"
+            aria-current={pathname === "/how-we-work" ? "page" : undefined}
+            className="nav-link"
+          >
+            Our approach
+          </Link>
+          <Link
+            to="/contact"
+            aria-current={pathname === "/contact" ? "page" : undefined}
+            className="nav-link"
+          >
+            Contact
+          </Link>
+          <Link to="/contact" className="action action-small header-cta">
+            Let’s talk <ArrowUpRight size={17} />
+          </Link>
+        </nav>
       </div>
     </header>
   );

@@ -42,12 +42,6 @@ export const Route = createFileRoute("/solutions/it")({
   component: ITPage,
 });
 
-const outcomes = [
-  { value: "SLA", label: "Defined response times, monitoring and scheduled visits" },
-  { value: "5", label: "Core capabilities delivered as one IT foundation" },
-  { value: "360°", label: "Survey, design, install, migrate and support" },
-];
-
 const scope = [
   "Infrastructure audit and as-built documentation review",
   "Structured cabling with certified and tested links",
@@ -63,13 +57,12 @@ function ITPage() {
   return (
     <SolutionDetailPage
       title="IT Solutions"
-      heroTitle="IT Infrastructure in Dubai"
+      heroTitle="A stronger foundation. Every day."
       heroDescription="Cabling, servers, backup and day-to-day support — one dependable foundation for everything else."
       image={solution.image}
       imageAlt={solution.imageAlt}
       intro="Every other system on site depends on the network beneath it. We build and maintain that layer — structured cabling, switching, servers, backup and security — then keep it running under a support agreement with clear response times."
-      outcomes={outcomes}
-      capabilitiesTitle="Five IT capabilities, delivered as one foundation"
+      capabilitiesTitle="Keep your business connected."
       capabilitiesDescription="Each capability is designed, installed and supported end to end, then documented so your environment stays maintainable."
       subServices={solution.subServices}
       scopeTitle="What a typical IT engagement covers"

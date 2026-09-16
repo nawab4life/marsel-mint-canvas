@@ -42,12 +42,6 @@ export const Route = createFileRoute("/solutions/av")({
   component: AVPage,
 });
 
-const outcomes = [
-  { value: "1", label: "One control experience across every room and screen" },
-  { value: "5", label: "Core capabilities delivered as one AV system" },
-  { value: "360°", label: "Survey, design, install, train and support" },
-];
-
 const scope = [
   "Room-by-room survey covering acoustics, sightlines and lighting",
   "Display, projection and video wall sizing per viewing distance",
@@ -63,13 +57,12 @@ function AVPage() {
   return (
     <SolutionDetailPage
       title="AV Solutions"
-      heroTitle="AV Solutions in Dubai"
+      heroTitle="Make your space speak."
       heroDescription="Clear sound, sharp image and controls people can actually use — in every room you run."
       image={solution.image}
       imageAlt={solution.imageAlt}
       intro="Audio-visual systems shape how a space feels and how meetings run. We design meeting room AV, digital signage, paging and commercial audio for corporate, hospitality and retail environments — commissioned properly and handed over with training."
-      outcomes={outcomes}
-      capabilitiesTitle="Five AV capabilities, delivered as one system"
+      capabilitiesTitle="Sound, vision and simple control."
       capabilitiesDescription="Each capability is designed, installed and supported end to end, then combined into a consistent experience across the building."
       subServices={solution.subServices}
       scopeTitle="What a typical AV engagement covers"
