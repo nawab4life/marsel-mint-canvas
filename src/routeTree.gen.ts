@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
+import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
@@ -35,6 +36,11 @@ const ContactRoute = ContactRouteImport.update({
 const HowWeWorkRoute = HowWeWorkRouteImport.update({
   id: '/how-we-work',
   path: '/how-we-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -87,6 +93,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/how-we-work': typeof HowWeWorkRoute
+  '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRouteWithChildren
   '/solutions/av': typeof SolutionsAvRoute
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/how-we-work': typeof HowWeWorkRoute
+  '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions/av': typeof SolutionsAvRoute
   '/solutions/id': typeof SolutionsIdRoute
@@ -114,6 +122,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/how-we-work': typeof HowWeWorkRoute
+  '/partners': typeof PartnersRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRouteWithChildren
   '/solutions/av': typeof SolutionsAvRoute
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/how-we-work'
+    | '/partners'
     | '/sitemap.xml'
     | '/solutions'
     | '/solutions/av'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/how-we-work'
+    | '/partners'
     | '/sitemap.xml'
     | '/solutions/av'
     | '/solutions/id'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/how-we-work'
+    | '/partners'
     | '/sitemap.xml'
     | '/solutions'
     | '/solutions/av'
@@ -171,6 +183,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   HowWeWorkRoute: typeof HowWeWorkRoute
+  PartnersRoute: typeof PartnersRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRouteWithChildren
 }
@@ -196,6 +209,13 @@ declare module '@tanstack/react-router' {
       path: '/how-we-work'
       fullPath: '/how-we-work'
       preLoaderRoute: typeof HowWeWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -302,6 +322,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   HowWeWorkRoute: HowWeWorkRoute,
+  PartnersRoute: PartnersRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRouteWithChildren,
 }

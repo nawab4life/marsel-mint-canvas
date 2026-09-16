@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Phone } from "lucide-react";
 import { MarselLogo } from "./MarselLogo";
 import { serviceAreas, siteContact } from "@/data/site";
 export function Footer() {
@@ -23,6 +23,7 @@ export function Footer() {
             <Link to="/">Home</Link>
             <Link to="/solutions">Our solutions</Link>
             <Link to="/how-we-work">Our approach</Link>
+            <Link to="/partners">Partners</Link>
             <Link to="/contact">Contact</Link>
           </div>
           <div>
@@ -38,6 +39,10 @@ export function Footer() {
             <a href={`mailto:${siteContact.email}`}>
               {siteContact.email}
               <ArrowUpRight size={18} />
+            </a>
+            <a href={siteContact.phoneHref} className="footer-phone">
+              <Phone size={16} />
+              {siteContact.phone}
             </a>
             <p>
               Tell us what you’re planning.

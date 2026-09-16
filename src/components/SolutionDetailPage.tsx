@@ -3,7 +3,7 @@ import { ArrowDown, ArrowUpRight, Check } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { FaqSection } from "@/components/FaqSection";
 import { ContactBand } from "@/components/ContactBand";
-import { ConnectedWorkplace } from "@/components/ConnectedWorkplace";
+import { SolutionExperience } from "@/components/SolutionExperience";
 import type { Faq, SubService } from "@/data/solutions";
 import { serviceAreas } from "@/data/site";
 interface SolutionDetailPageProps {
@@ -90,11 +90,7 @@ export function SolutionDetailPage({
           </div>
         </div>
       </section>
-      <ConnectedWorkplace
-        key={service.slug}
-        initial={service.slug}
-        heading={`${service.short}, in your space.`}
-      />
+      <SolutionExperience key={service.slug} solution={service.slug} />
       <section className="section-space scope-section" id="scope">
         <div className="shell scope-grid">
           <div>

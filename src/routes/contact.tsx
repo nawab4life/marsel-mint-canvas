@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { siteContact } from "@/data/site";
 export const Route = createFileRoute("/contact")({
@@ -36,6 +36,16 @@ function ContactPage() {
               <span>EMAIL US DIRECTLY</span>
               <a href={`mailto:${siteContact.email}`}>
                 {siteContact.email}
+                <ArrowUpRight size={20} />
+              </a>
+            </div>
+          </div>
+          <div className="contact-direct contact-phone">
+            <Phone size={20} />
+            <div>
+              <span>CALL OUR TEAM</span>
+              <a href={siteContact.phoneHref}>
+                {siteContact.phone}
                 <ArrowUpRight size={20} />
               </a>
             </div>
